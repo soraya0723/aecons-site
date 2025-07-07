@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Careers at Aecons</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="section career">
+  <h2>Join the Aecons Team</h2>
+
+  <!-- Job Preview Cards -->
+  <section class="job-listing">
+    <div class="job-card">
+      <div class="job-icon">
+        <img src="assets/icon/architect.svg" alt="Architect Icon">
+      </div>
+      <div class="job-details">
+        <h3>Junior Architect</h3>
+        <p>Join our residential design team with a focus on sustainability and creativity.</p>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-icon">
+        <img src="assets/icon/3D.svg" alt="3D Icon">
+      </div>
+      <div class="job-details">
+        <h3>3D Visualizer</h3>
+        <p>Craft immersive renderings with Lumion, Blender or SketchUp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Application Form -->
+  <form id="aecons-form" class="application-form" action="https://formspree.io/f/xblybbpj" method="POST">
+    <h3>APPLICATION FORM</h3>
+
+    <label>
+      Position
+      <select name="position" required>
+        <option value="" disabled selected>Select position</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Architecture">Architecture</option>
+        <option value="IT">IT</option>
+      </select>
+    </label>
+
+    <label>
+      Name
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Email
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Message
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+
+    <label>
+      Resume Link
+      <input type="url" name="resume_link" placeholder="https://drive.google.com/..." required>
+    </label>
+
+    <button type="submit" class="btn">Submit Application</button>
+  </form>
+
+  <p id="form-response" class="form-status" style="display: none;"></p>
+
+</main>
+
+<footer><p>© Aecons Architecture 2025</p></footer>
+
+<!-- Script for Formspree submission handling -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('aecons-form');
+    const status = document.getElementById('form-response');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          status.textContent = '✅ Message sent successfully!';
+          status.className = 'form-status success';
+          status.style.display = 'block';
+
+          setTimeout(() => status.classList.add('fade-out'), 4000);
+          setTimeout(() => {
+            status.style.display = 'none';
+            status.classList.remove('fade-out');
+          }, 5000);
+
+          form.reset();
+        } else {
+          const data = await response.json();
+          status.textContent = "❌ " + (data.error || "Something went wrong.");
+          status.className = 'form-status error';
+          status.style.display = 'block';
+        }
+      } catch (err) {
+        console.error('Submission error:', err);
+        status.textContent = '❌ Failed to send. Check your connection.';
+        status.className = 'form-status error';
+        status.style.display = 'block';
+      }
+    });
+  });
+</script>
+<!-- Scripts -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
