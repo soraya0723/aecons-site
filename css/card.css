@@ -1,0 +1,183 @@
+/*SERVICE CARDS STYLES*/
+/* Popping card special styles */
+
+.highlight-card {
+  background: linear-gradient(135deg, #817979, #3a2c31);
+  border: 2px solid #1c1315;
+  animation: popIn 0.6s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Grid layout */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* Unified popping card style */
+.service-card {
+  background: #bfb7b7;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+  text-align: center;
+  transform: scale(0.95) translateY(40px);
+  opacity: 0;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform, opacity;
+}
+
+/* Icon */
+.service-card::before {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Hover effect (same as job card feel) */
+.service-card:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* Animate on scroll (pop in) */
+.service-card.animate {
+  animation: popIn 0.6s ease-out forwards;
+}
+
+/* Delay animation for staggered pop */
+.service-card:nth-child(1).animate { animation-delay: 0.1s; }
+.service-card:nth-child(2).animate { animation-delay: 0.2s; }
+.service-card:nth-child(3).animate { animation-delay: 0.3s; }
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Title & Description */
+.service-card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Icons */
+.service-card:nth-child(1)::before { content: "🏡"; }
+.service-card:nth-child(2)::before { content: "🖥️"; }
+.service-card:nth-child(3)::before { content: "📐"; }
+.projects-preview {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f8f8f8;
+}
+
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  padding: 0 1rem 1rem;
+  color: #555;
+}
+.about-preview {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-card img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.about-content {
+  max-width: 700px;
+}
+
+.about-content h3 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (min-width: 768px) {
+  .about-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .about-card img {
+    flex: 1;
+  }
+
+  .about-content {
+    flex: 1;
+    padding-left: 2rem;
+  }
+}

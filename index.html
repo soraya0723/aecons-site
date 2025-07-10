@@ -4,62 +4,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aecons | Home</title>
+  <meta name="description" content="Aecons is a modern architecture firm specializing in sustainable and innovative design. Get a quote or explore our projects.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css"/>
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/button.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/card.css" />
 </head>
+
 <body>
 
   <!-- Hero Section with Swiper Background -->
-  <main class="section hero">
-    <div class="hero-overlay"></div>
+  <main class="section hero" aria-label="Hero Banner">
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <div class="hero-content">
       <h1>Welcome to Aecons</h1>
-      <p>Innovative, sustainable, timeless architecture</p>
-      <a href="contact.html" class="btn">Get a Quote</a>
-      <a href="projects.html" class="btn secondary">View Projects</a>
+      <p>ARCHITECTURE, ENGINEERING, CONSTRUCTION</p>
     </div>
 
-    <div class="swiper hero-swiper">
+    <div class="swiper hero-swiper" aria-label="Featured Project Images">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="assets/images/1.jpg" alt="Hero Image 1"/></div>
-        <div class="swiper-slide"><img src="assets/images/3.jpg" alt="Hero Image 2"/></div>
-        <div class="swiper-slide"><img src="assets/images/6.jpg" alt="Hero Image 3"/></div>
+        <!-- Hero Slides -->
+        <div class="swiper-slide"><img src="assets/images/S1a.jpg" alt="Modern house with glass walls" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S1.jpg" alt="Contemporary villa exterior" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S2.png" alt="Concept art of interior design" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S3.png" alt="Digital rendering of building layout" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S4.jpg" alt="Open space architecture" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S5.jpg" alt="Luxury apartment design" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S6.jpg" alt="Futuristic urban design" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S7.jpg" alt="Minimalist house entrance" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S8.jpg" alt="Elegant hallway interior" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S9.jpg" alt="Architectural structure with lighting" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S10.jpg" alt="3D building concept model" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/S11.jpg" alt="Mixed-use development overview" loading="lazy"/></div>
       </div>
     </div>
   </main>
 
   <!-- Services Preview Section -->
-  <section class="section services-preview">
+  <section class="section services-preview" aria-label="Aecons Services">
     <h2>Our Expertise</h2>
     <div class="service-grid">
-      <div class="service-card">
-        <h3>Residential Design</h3>
+      <article class="service-card">
+        <h3>Design/General Construction</h3>
         <p>Custom-tailored home designs blending aesthetics and function.</p>
-      </div>
-      <div class="service-card">
-        <h3>3D Rendering</h3>
+      </article>
+      <article class="service-card">
+        <h3>Civil/Structural Works</h3>
         <p>Bring concepts to life with immersive visual presentations.</p>
-      </div>
-      <div class="service-card">
-        <h3>Project Management</h3>
+      </article>
+      <article class="service-card">
+        <h3>Architectural Works</h3>
         <p>From concept to completion, we ensure flawless execution.</p>
+      </article>
+    </div>
+    <a href="services.html" class="btn secondary centered-btn">Explore All Services</a>
+  </section>
+
+  <!-- Projects Preview Section -->
+  <section class="section projects-preview" aria-label="Aecons Projects">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+      <article class="project-card">
+        <img src="assets/images/S1a.jpg" alt="Luxury Glass House" loading="lazy" />
+        <h3>Glass Retreat Residence</h3>
+        <p>Modern design emphasizing transparency and space flow.</p>
+      </article>
+      <article class="project-card">
+        <img src="assets/images/S4.jpg" alt="Open Concept Building" loading="lazy" />
+        <h3>Open Concept Pavilion</h3>
+        <p>A community space fostering light and openness.</p>
+      </article>
+      <article class="project-card">
+        <img src="assets/images/S6.jpg" alt="Futuristic Urban Design" loading="lazy" />
+        <h3>Futuristic City Hub</h3>
+        <p>Forward-thinking architectural solutions for urban areas.</p>
+      </article>
+    </div>
+    <a href="projects.html" class="btn secondary centered-btn">View All Projects</a>
+  </section>
+
+  <!-- About Us Preview Section -->
+  <section class="section about-preview" aria-label="About Aecons">
+    <h2>About Aecons</h2>
+    <div class="about-card">
+      <img src="assets/images/Screenshot 2025-07-10 152318.png" alt="Team of architects reviewing blueprints" loading="lazy" />
+      <div class="about-content">
+        <h3>Who We Are</h3>
+        <p>
+          Aecons is a cutting-edge architecture and engineering firm focused on sustainable, elegant, and functional spaces.
+          Our team brings years of experience delivering bespoke construction solutions across residential, commercial, and urban projects.
+        </p>
+        <a href="about.html" class="btn secondary">Learn More About Us</a>
       </div>
     </div>
-    <a href="services.html" class="btn secondary">Explore All Services</a>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© Aecons Architecture 2025</p>
+  <footer role="contentinfo">
+    <p>&copy; 2025 Aecons Architecture. All rights reserved.</p>
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
-
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

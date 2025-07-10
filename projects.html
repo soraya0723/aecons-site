@@ -3,49 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aecons | Projects</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Aecons | Home</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/button.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
 </head>
+
 <body>
 
-  <!-- Projects Section -->
-  <main class="section projects">
-    <h2>Portfolio</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="assets/images/Diliman, Quezon City 1.jpg" alt="Modern Villa">
-        <div class="overlay">
-          <h3>Modern Villa</h3>
-          <p>Manila, 2023</p>
-        </div>
-      </div>
-      <!-- Add more gallery-item blocks below -->
-      <div class="gallery-item">
-        <img src="assets/images/Bayle Restaurant1.jpg" alt="Bayle Restaurant">
-        <div class="overlay">
-          <h3>Bayle Restaurant</h3>
-          <p>Taguig, 2022</p>
-        </div>
-      </div>
-    </div>
-    <div class="upload-container">
-  <h3>Upload a Project Image</h3>
-  <input type="file" id="photoInput" accept="image/*" />
-  <button id="uploadBtn" class="btn">Upload Image</button>
-  <p id="uploadStatus" class="form-status"></p>
-</div>
+<!-- FILTER + GALLERY -->
+<main class="section projects">
+  <h2 style="text-align:center;">Portfolio</h2>
 
+  <div class="filter-buttons">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="residential">Residential</button>
+    <button data-filter="commercial">Commercial</button>
+    <button data-filter="interior">Interior Projects</button>
+  </div>
+    <div class="gallery">
+      <!-- Commercial Project -->
+      <div class="gallery-item" data-category="commercial" data-images='[
+        "assets/images/Cafe De Barako BGC1.jpg",
+        "assets/images/Cafe De Barako BGC2.jpg",
+        "assets/images/Cafe De Barako BGC3.jpg",
+        "assets/images/Cafe De Barako BGC4.jpg"
+      ]'>
+        <img src="assets/images/Cafe De Barako BGC1.jpg" alt="Cafe De Barako BGC">
+        <div class="overlay">
+          <h3>CAFE DE BARAKO</h3>
+          <p>Bonifacio Global City, 2023</p>
+        </div>
+      </div>
+
+      <!-- Residential Project -->
+      <div class="gallery-item" data-category="commercial" data-images='[
+        "assets/perspective/(DONE)  Project Focus_ Bayle Restaurant - Tabuk, Kalinga/1747973517273 (1).jpg",
+        "assets/perspective/(DONE)  Project Focus_ Bayle Restaurant - Tabuk, Kalinga/PERSPECTIVE (21).png",
+        "assets/perspective/(DONE)  Project Focus_ Bayle Restaurant - Tabuk, Kalinga/PERSPECTIVE (22).png",
+        "assets/perspective/(DONE)  Project Focus_ Bayle Restaurant - Tabuk, Kalinga/PERSPECTIVE (23).png"
+      ]'>
+        <img src="assets/perspective/(DONE)  Project Focus_ Bayle Restaurant - Tabuk, Kalinga/1747973517273 (1).jpg" alt="Modern House">
+        <div class="overlay">
+          <h3>BAYLE RESTAURANT</h3>
+          <p>Tabuk Kalinga, 2024</p>
+        </div>
+      </div>
+
+      <!-- Interior Projects -->
+      <div class="gallery-item" data-category="interior" data-images='[
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 3517) – Victoria de Manila, Taft/1748241589227 (1).jpg",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 3517) – Victoria de Manila, Taft/PERSPECTIVE (37).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 3517) – Victoria de Manila, Taft/PERSPECTIVE (38).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 3517) – Victoria de Manila, Taft/PERSPECTIVE (39).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 3517) – Victoria de Manila, Taft/PERSPECTIVE (40).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 3517) – Victoria de Manila, Taft/PERSPECTIVE (41).png"
+      ]'>
+        <img src="assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 3517) – Victoria de Manila, Taft/1748241589227 (1).jpg" alt="Modern House">
+        <div class="overlay">
+          <h3>CONDO FITOUT (UNIT 3517) DESIGN AND BUILD</h3>
+          <p>Victoria de Manila, Taft, 2025</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="interior" data-images='[
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 4209) – Victoria Sports Tower II/510980650_1327676686033117_1080715478298132478_n.jpg",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 4209) – Victoria Sports Tower II/PERSPECTIVE (14).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 4209) – Victoria Sports Tower II/PERSPECTIVE (15).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 4209) – Victoria Sports Tower II/PERSPECTIVE (16).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 4209) – Victoria Sports Tower II/PERSPECTIVE (17).png"
+      ]'>
+        <img src="assets/perspective/(DONE) Project Feature_ Condo Fitout (Unit 4209) – Victoria Sports Tower II/510980650_1327676686033117_1080715478298132478_n.jpg" alt="Modern House">
+        <div class="overlay">
+          <h3>CONDO UNIT ARCHITECTURAL INTERIOR</h3>
+          <p>EDSA, Quezon City, 2025</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="interior" data-images='[
+        "assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/1748308249613 (1).jpg",
+        "assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/PERSPECTIVE (59).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/PERSPECTIVE (60).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/PERSPECTIVE (61).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/PERSPECTIVE (62).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/PERSPECTIVE (63).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/PERSPECTIVE (64).png"
+      ]'>
+        <img src="assets/perspective/(DONE) Project Feature_ Condo Studio Unit Architectural Interior – Victoria Sports Tower, EDSA/1748308249613 (1).jpg" alt="Modern House">
+        <div class="overlay">
+          <h3>CONDO STUDIO UNIT ARCHITECTURAL INTERIOR</h3>
+          <p>Victoria Sports Tower, EDSA, 2022</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="interior" data-images='[
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Diliman, Quezon City/1747904378512 (1).jpg",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Diliman, Quezon City/PERSPECTIVE (4).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Diliman, Quezon City/PERSPECTIVE (5).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Diliman, Quezon City/PERSPECTIVE (6).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Diliman, Quezon City/PERSPECTIVE (7).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Diliman, Quezon City/PERSPECTIVE (8).png"
+      ]'>
+        <img src="assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Diliman, Quezon City/1747904378512 (1).jpg" alt="Modern House">
+        <div class="overlay">
+          <h3>CONDO UNIT ARCHITECTURAL INTERIOR</h3>
+          <p>Diliman, Quezon City, 2021</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="interior" data-images='[
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Malate, Metro Manila/1748226457447 (1).jpg",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Malate, Metro Manila/PERSPECTIVE (33).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Malate, Metro Manila/PERSPECTIVE (35).png",
+        "assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Malate, Metro Manila/PERSPECTIVE (36).png"
+      ]'>
+        <img src="assets/perspective/(DONE) Project Feature_ Condo Unit Architectural Interior – Malate, Metro Manila/1748226457447 (1).jpg" alt="Modern House">
+        <div class="overlay">
+          <h3>CONDO UNIT ARCHITECTURAL INTERIOR</h3>
+          <p>Malate, Metro Manila, 2021</p>
+        </div>
+      </div>
+
+      <!-- Continue adding the remaining items similarly... -->
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>© Aecons Architecture 2025</p>
-  </footer>
+  <!-- Swiper Modal with Thumbnails -->
+<div id="swiperModal" style="display: none">
+  <button id="closeModal" aria-label="Close modal">✖</button>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="js/main.js"></script>
-  
+  <div class="swiper swiper-main">
+    <div class="swiper-wrapper" id="swiperMainWrapper">
+      <!-- Slides inserted dynamically -->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <div class="swiper swiper-thumbs">
+    <div class="swiper-wrapper" id="swiperThumbWrapper">
+      <!-- Thumbs inserted dynamically -->
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+
 
 </body>
 </html>

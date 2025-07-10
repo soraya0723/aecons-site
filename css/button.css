@@ -1,0 +1,97 @@
+/* ========================
+   Buttons: Base + Variants
+   ======================== */
+.btn {
+  display: inline-flex;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+/* Hover + Focus */
+.btn:hover,
+.btn:focus-visible {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 86, 179, 0.3);
+}
+
+/* Accessibility: focus ring */
+.btn:focus-visible {
+  outline: 3px solid #cfe2ff;
+  outline-offset: 2px;
+}
+
+/* Secondary variant */
+.btn.secondary {
+  background-color: #6c757d;
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.2);
+}
+
+.btn.secondary:hover,
+.btn.secondary:focus-visible {
+  background-color: #5a6268;
+  box-shadow: 0 6px 18px rgba(90, 98, 104, 0.3);
+}
+.centered-btn {
+  display: block;
+  margin: 3rem auto; /* adjust spacing as needed */
+}
+
+/* Small button variant */
+.btn.small-btn {
+  font-size: 0.875rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+}
+
+
+/* FILTER BUTTONS WRAPPER */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* INDIVIDUAL FILTER BUTTON */
+.filter-buttons button {
+  background-color: #f0f0f0;
+  border: 2px solid transparent;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  letter-spacing: 0.5px;
+}
+
+/* HOVER STATE */
+.filter-buttons button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ACTIVE STATE */
+.filter-buttons button.active {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+

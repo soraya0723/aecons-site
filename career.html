@@ -1,40 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Careers at Aecons</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aecons | Home</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/button.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
 </head>
+
 <body>
 
 <main class="section career">
   <h2>Join the Aecons Team</h2>
 
-  <!-- Job Preview Cards -->
   <section class="job-listing">
+    <!-- Card 1 -->
     <div class="job-card">
       <div class="job-icon">
         <img src="assets/icon/architect.svg" alt="Architect Icon">
       </div>
       <div class="job-details">
-        <h3>Junior Architect</h3>
-        <p>Join our residential design team with a focus on sustainability and creativity.</p>
+        <h3>Architect</h3>
+        <p>Lead the design of innovative residential spaces that prioritize sustainability and creativity.</p>
       </div>
     </div>
 
+    <!-- Card 2 -->
     <div class="job-card">
       <div class="job-icon">
         <img src="assets/icon/3D.svg" alt="3D Icon">
       </div>
       <div class="job-details">
-        <h3>3D Visualizer</h3>
-        <p>Craft immersive renderings with Lumion, Blender or SketchUp.</p>
+        <h3>Marketing</h3>
+        <p>Develop engaging campaigns and visual content to promote our architectural vision and projects.</p>
+      </div>
+    </div>
+
+    <!-- 🆕 Card 3 -->
+    <div class="job-card highlight-card">
+      <div class="job-icon">
+        <img src="assets/icon/interior icon.svg" alt="Interior Icon">
+      </div>
+      <div class="job-details">
+        <h3>Staff Office</h3>
+        <p>Support daily office operations, coordinate administrative tasks, and maintain efficient workflows.</p>
       </div>
     </div>
   </section>
 
+
   <!-- Career Application Form -->
-  <form id="aecons-form" class="application-form" action="https://formspree.io/f/xblybbpj" method="POST">
+  <form id="aecons-form" class="application-form" action="https://formspree.io/f/xnnveqwy" method="POST">
     <h3>APPLICATION FORM</h3>
 
     <label>
@@ -43,7 +70,7 @@
         <option value="" disabled selected>Select position</option>
         <option value="Marketing">Marketing</option>
         <option value="Architecture">Architecture</option>
-        <option value="IT">IT</option>
+        <option value="Staff Office">Staff Office</option>
       </select>
     </label>
 
