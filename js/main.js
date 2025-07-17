@@ -1,30 +1,36 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // 🔹 Navbar Injection & Toggle
+  // 🔹 Navbar Injection
   if (!document.querySelector('.navbar')) {
     const res = await fetch('components/navbar.html');
     const html = await res.text();
     document.body.insertAdjacentHTML('afterbegin', html);
 
     const toggle = document.getElementById('nav-toggle');
-    const links = document.getElementById('nav-links');
+    const navMenu = document.getElementById('nav-menu');
 
+    // Toggle menu when logo is clicked
     toggle?.addEventListener('click', e => {
       e.stopPropagation();
-      links.classList.toggle('show');
+      navMenu?.classList.toggle('show');
     });
 
+    // Hide menu when nav link is clicked
     document.querySelectorAll('.nav-links a').forEach(link =>
-      link.addEventListener('click', () => links.classList.remove('show'))
+      link.addEventListener('click', () => {
+        navMenu?.classList.remove('show');
+      })
     );
 
+    // Hide on outside click
     document.addEventListener('click', e => {
-      if (links?.classList.contains('show') &&
-          !links.contains(e.target) &&
+      if (navMenu?.classList.contains('show') &&
+          !navMenu.contains(e.target) &&
           !toggle.contains(e.target)) {
-        links.classList.remove('show');
+        navMenu.classList.remove('show');
       }
     });
 
+    // Add scrolled class to navbar
     window.addEventListener('scroll', () => {
       document.querySelector('.navbar')
         .classList.toggle('scrolled', window.scrollY > 50);

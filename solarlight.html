@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products | Aecons</title>
+
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/button.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/solarlight.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+
+  <!-- MAIN PROJECTS SECTION -->
+<main class="projects-section">
+  <h2>All In One Solar Street Light</h2>
+
+  <div class="gallery">
+    
+    <div class="gallery-item" data-images='[
+      "assets/products/Pro1/4.png",
+      "assets/products/Pro1/1.jpg",
+      "assets/products/Pro1/2.jpg",
+      "assets/products/Pro1/3.jpg",
+      "assets/products/Pro1/6.jpg",
+      "assets/products/Pro1/7.jpg",
+      "assets/products/Pro1/8.jpg",
+      "assets/products/Pro1/9.jpg",
+      "assets/products/Pro1/10.jpg",
+      "assets/products/Pro1/11.jpg"
+    ]'>
+      <img src="assets/products/Pro1/5.jpg" alt="100W 200W 300W ABS Solar Street Light">
+      <div class="overlay">
+        <h3>100W 200W 300W ABS Solar Street Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/Pro2/pro2.jpg",
+      "assets/products/Pro2/4.jpg",
+      "assets/products/Pro2/1.jpg",
+      "assets/products/Pro2/2.jpg",
+      "assets/products/Pro2/3.jpg"
+    ]'>
+      <img src="assets/products/Pro2/pro2.jpg" alt="30W 60W 90W 120W 150W ABS Solar Street Light">
+      <div class="overlay">
+        <h3>30W 60W 90W 120W 150W ABS Solar Street Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/200Watts/2.jpg",
+      "assets/products/200Watts/3.jpg",
+      "assets/products/200Watts/4.jpg",
+      "assets/products/200Watts/5.jpg",
+      "assets/products/200Watts/6.jpg",
+      "assets/products/200Watts/7.jpg"
+    ]'>
+      <img src="assets/products/200Watts/1.jpg" alt="200Watts ABS Solar Street Light with Armpole">
+      <div class="overlay">
+        <h3>200Watts ABS Solar Street Light with Armpole</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/30W 60W 90W/2.jpg",
+      "assets/products/30W 60W 90W/3.jpg",
+      "assets/products/30W 60W 90W/4.jpg",
+      "assets/products/30W 60W 90W/5.jpg",
+      "assets/products/30W 60W 90W/6.jpg"
+    ]'>
+      <img src="assets/products/30W 60W 90W/1.webp" alt="30W 60W 90W ABS Solar Street Light">
+      <div class="overlay">
+        <h3>30W 60W 90W ABS Solar Street Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/60W 120W 180W/1.jpg",
+      "assets/products/60W 120W 180W/2.jpg",
+      "assets/products/60W 120W 180W/3.jpg",
+      "assets/products/60W 120W 180W/4.jpg",
+      "assets/products/60W 120W 180W/5.jpg"
+    ]'>
+      <img src="assets/products/60W 120W 180W/1e.png" alt="60W 120W 180W Aluminum Solar Street Light">
+      <div class="overlay">
+        <h3>60W 120W 180W Aluminum Solar Street Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/40W 60W 100W/1.jpg",
+      "assets/products/40W 60W 100W/2a.jpg",
+      "assets/products/40W 60W 100W/2.jpg",
+      "assets/products/40W 60W 100W/3.jpg",
+      "assets/products/40W 60W 100W/4.jpg",
+      "assets/products/40W 60W 100W/5.jpg",
+      "assets/products/40W 60W 100W/6b.jpg"
+    ]'>
+      <img src="assets/products/40W 60W 100W/1a.jpg" alt="40W 60W 100W Die - Cast Aluminum Solar Street Light">
+      <div class="overlay">
+        <h3>40W 60W 100W Die - Cast Aluminum Solar Street Light</h3>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+  <!-- Swiper Modal -->
+  <div id="swiperModal" style="display: none">
+    <button id="closeModal" aria-label="Close modal">✖</button>
+
+    <div class="swiper swiper-main">
+      <div class="swiper-wrapper" id="swiperMainWrapper"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper swiper-thumbs">
+      <div class="swiper-wrapper" id="swiperThumbWrapper"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <p>&copy; 2025 Aecons Architecture. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/sl.js" defer></script>
+</body>
+</html>

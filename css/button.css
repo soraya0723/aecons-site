@@ -2,7 +2,7 @@
    Buttons: Base + Variants
    ======================== */
 .btn {
-  display: inline-flex;
+  display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: #007bff;
   color: #fff;
@@ -93,5 +93,18 @@
   color: #fff;
   border-color: #111;
 }
+/* Button Styles for a Different Design */
+.btn {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
 
+.btn:hover {
+  background-color: #0056b3;
+}
 

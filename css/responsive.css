@@ -24,3 +24,18 @@
     width:40px; height:40px; margin:auto;
   }
 }
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .products-section h2 {
+    font-size: 2rem;
+  }
+
+  .card-body h3 {
+    font-size: 1rem;
+  }
+
+  .card-body .btn {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+}

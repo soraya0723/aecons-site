@@ -1,98 +1,86 @@
+/* Navbar Container */
 .navbar {
-  position: fixed; top: 0; width: 100%; z-index: 1000;
-  background: rgba(0,0,0,0.3); backdrop-filter: blur(10px);
-  transition: background-color .3s, box-shadow .3s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 .navbar.scrolled {
-  background: rgb(236, 225, 225);
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  background: #ece1e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.navbar nav {
-  display: flex; flex-direction: column; align-items: flex-start;
+
+/* Inner Flex Container */
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 1rem 2rem;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* 👈 This moves logo to the right */
+}
+
+/* Toggle for mobile */
+.nav-row.show {
+  display: flex;
+}
+/* Logo */
+.logo {
+  cursor: pointer;
 }
 .logo-img {
-  height: 40px; transition: transform .3s, filter .3s;
+  height: 50px;
+  transition: transform 0.3s, filter 0.3s;
 }
 .logo-img:hover {
-  transform: scale(1.05); filter: brightness(1.15);
+  transform: scale(1.05);
+  filter: brightness(1.15);
 }
+
+/* Nav Row Wrapper */
+.nav-row {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 0.5rem;
+  width: 100%;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+.nav-row.show {
+  display: flex; /* shown on toggle */
+}
+
+/* Shared Links Style */
 .nav-links {
-  list-style: none; display: flex; flex-direction: column;
-  gap: 1rem; max-height: 0; opacity: 0; overflow: hidden;
-  pointer-events: none; margin-top: 1rem;
-  transition: max-height .4s, opacity .4s;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
-.nav-links.show {
-  max-height: 500px; opacity: 1; pointer-events: auto;
+.nav-links li {
+  position: relative;
 }
 .nav-links a {
-  color: white; text-decoration: none;
-  padding: 0.5rem 1rem; border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
 }
 .nav-links a:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 .navbar.scrolled .nav-links a {
   color: #333;
 }
-.nav-socials {
-  display: flex; gap: 1.75rem; margin-left: auto; align-items: center;
-}
-/* SOCIAL ICONS (GLOBAL SHARED STYLE) */
-/* SOCIAL ICON BASE */
-.circle-icon,
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  color: white;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* ICON SIZE UPGRADE */
-.circle-icon {
-  width: 50px;
-  height: 50px;
-}
-.circle-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-/* OPTIONAL: Hover pop for UX */
-.circle-icon:hover {
-  transform: scale(1.15);
-  box-shadow: 0 10px 20px rgb(245, 239, 239);
-}
-
-/* PLATFORM COLORS */
-.facebook {
-  background-color: #1877f2;
-}
-.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
-.linkedin {
-  background-color: #0077b5;
-}
 
 
-/* NAVBAR SOCIAL WRAPPER */
-.nav-socials {
-  display: flex;
-  gap: 1.5rem;
-  margin-left: auto;
-  align-items: center;
-}
-
-/* FOR SCROLLED STATE - ICON CONTRAST */
-.navbar.scrolled .circle-icon svg {
-  fill: #333;
-}
-.navbar.scrolled .circle-icon {
-  box-shadow: 0 2px 6px rgb(243, 232, 232);
-}

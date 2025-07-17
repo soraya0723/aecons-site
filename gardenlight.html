@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products | Aecons</title>
+
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/button.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/gardenlight.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+
+  <!-- MAIN PROJECTS SECTION -->
+<main class="projects-section">
+  <h2>Solar Garden Light</h2>
+
+  <div class="gallery">
+    
+    <div class="gallery-item" data-images='[
+      "assets/products/30W/2.png",
+      "assets/products/30W/3.jpg",
+      "assets/products/30W/4.jpg",
+      "assets/products/30W/5.jpg",
+      "assets/products/30W/6.jpg",
+      "assets/products/30W/7.jpg"
+    ]'>
+      <img src="assets/products/30W/1.png" alt="30W Solar Ceiling Light">
+      <div class="overlay">
+        <h3>30W Solar Ceiling Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/5W/2.png",
+      "assets/products/5W/3.png",
+      "assets/products/5W/4.png",
+      "assets/products/5W/5.png",
+      "assets/products/5W/6.png"
+    ]'>
+      <img src="assets/products/5W/1.png" alt="5W Solar Square Garden Light">
+      <div class="overlay">
+        <h3>5W Solar Square Garden Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/5W Solar/2.png",
+      "assets/products/5W Solar/3.png",
+      "assets/products/5W Solar/4.png",
+      "assets/products/5W Solar/5.png",
+      "assets/products/5W Solar/6.png"
+    ]'>
+      <img src="assets/products/5W Solar/1.png" alt="5W Solar Hexagon Garden Light">
+      <div class="overlay">
+        <h3>5W Solar Hexagon Garden Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/100W/2.png",
+      "assets/products/100W/3.jpg",
+      "assets/products/100W/4.jpg",
+      "assets/products/100W/5.jpg"
+    ]'>
+      <img src="assets/products/100W/1.png" alt="100W Indoor Outdoor Pendant Light">
+      <div class="overlay">
+        <h3>100W Indoor Outdoor Pendant Light</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/Red and Blue/2.png",
+      "assets/products/Red and Blue/3.jpg",
+      "assets/products/Red and Blue/4.jpg",
+      "assets/products/Red and Blue/5.jpg"
+    ]'>
+      <img src="assets/products/Red and Blue/1.png" alt="Red and Blue Solar Strobe Warning Light">
+      <div class="overlay">
+        <h3>Red and Blue Solar Strobe Warning Light</h3>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+  <!-- Swiper Modal -->
+  <div id="swiperModal" style="display: none">
+    <button id="closeModal" aria-label="Close modal">✖</button>
+
+    <div class="swiper swiper-main">
+      <div class="swiper-wrapper" id="swiperMainWrapper"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper swiper-thumbs">
+      <div class="swiper-wrapper" id="swiperThumbWrapper"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <p>&copy; 2025 Aecons Architecture. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/sl.js" defer></script>
+</body>
+</html>

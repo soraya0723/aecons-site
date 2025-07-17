@@ -1,0 +1,131 @@
+/* Base Reset */
+.contact-details {
+  text-align: center;                    /* Center all text */
+  padding: 20px;
+  background-color: #ecf4fb;
+  border-radius: 8px;
+  border-left: none;                     /* Remove left border */
+  border-top: 5px solid #3498db;         /* Use top border for a centered layout look */
+}
+
+/* Subtitle styling remains unchanged */
+.contact-subtitle {
+  font-size: 1.2em;
+  color: #2980b9;
+  margin-bottom: 15px;
+}
+
+/* Contact item paragraphs */
+.contact-item {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+/* Label inside contact item */
+.label {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Email link */
+.contact-email {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+/* Google Maps button */
+.btn.map-link {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn.map-link:hover {
+  background-color: #217dbb;
+}
+
+/* ✅ Shared circle styling for social icons */
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: #2980b9;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.circle-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.circle-icon:hover {
+  background-color: #1c5980;
+  transform: scale(1.1);
+}
+
+/* ✅ Contact-specific social icons wrapper */
+/* Contact section adjustment */
+.contact {
+  position: relative;
+  padding-bottom: 120px; /* Ensures room at bottom for icons */
+}
+
+/* Social icon container */
+.contact .social-icons {
+  position: absolute;
+  bottom: 30px;           /* Distance from bottom of .contact */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Each circular icon */
+.circle-icon {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: add margin between the map button and icons */
+.map-link {
+  margin-bottom: 80px; /* Pushes it up above the icons */
+}
+
+/* Icon SVG size */
+.circle-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Platform colors */
+.circle-icon.facebook { background-color: #1877f2; }
+.circle-icon.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, 
+              #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.circle-icon.linkedin { background-color: #0077b5; }
+
+/* Optional: distinguish by platform */
+.facebook { background-color: #3b5998; }
+.instagram { background-color: #e4405f; }
+.linkedin { background-color: #0077b5; }
