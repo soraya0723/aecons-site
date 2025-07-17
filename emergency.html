@@ -13,12 +13,120 @@
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/utilities.css" />
-  <link rel="stylesheet" href="css/procard.css" />
+  <link rel="stylesheet" href="css/eme.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
 
+  <!-- MAIN PROJECTS SECTION -->
+<main class="projects-section">
+  <h2>Solar Emergency System</h2>
 
-<!-- Footer -->
+  <div class="gallery">
+    
+    <div class="gallery-item" data-images='[
+      "assets/products/Solar Emergency System/500W/2.png",
+      "assets/products/Solar Emergency System/500W/3.jpg",
+      "assets/products/Solar Emergency System/500W/4.jpg",
+      "assets/products/Solar Emergency System/500W/5.jpg",
+      "assets/products/Solar Emergency System/500W/6.jpg"
+    ]'>
+      <img src="assets/products/Solar Emergency System/500W/1.webp" alt="500W All in One Solar Generator">
+      <div class="overlay">
+        <h3>500W All in One Solar Generator</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/Solar Emergency System/2000W/2.png",
+      "assets/products/Solar Emergency System/2000W/3.jpg",
+      "assets/products/Solar Emergency System/2000W/4.webp",
+      "assets/products/Solar Emergency System/2000W/5.webp",
+      "assets/products/Solar Emergency System/2000W/6.webp",
+      "assets/products/Solar Emergency System/2000W/7.webp"
+    ]'>
+      <img src="assets/products/Solar Emergency System/2000W/1.webp" alt="2000W All in One Solar Generator">
+      <div class="overlay">
+        <h3>2000W All in One Solar Generator</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/Solar Emergency System/1000W/2.png",
+      "assets/products/Solar Emergency System/1000W/3.jpg",
+      "assets/products/Solar Emergency System/1000W/4.webp",
+      "assets/products/Solar Emergency System/1000W/5.webp",
+      "assets/products/Solar Emergency System/1000W/6.webp",
+      "assets/products/Solar Emergency System/1000W/7.webp"
+    ]'>
+      <img src="assets/products/Solar Emergency System/1000W/1.webp" alt="1000W All in One Solar Generator">
+      <div class="overlay">
+        <h3>1000W All in One Solar Generator</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/Solar Emergency System/8W/2.png",
+      "assets/products/Solar Emergency System/8W/3.jpg",
+      "assets/products/Solar Emergency System/8W/4.jpg",
+      "assets/products/Solar Emergency System/8W/5.jpg",
+      "assets/products/Solar Emergency System/8W/6.jpg"
+    ]'>
+      <img src="assets/products/Solar Emergency System/8W/1.webp" alt="8W Solar Emergency Multifunctional Power Bank">
+      <div class="overlay">
+        <h3>8W Solar Emergency Multifunctional Power Bank</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/Solar Emergency System/20W 30W 50W/2.png",
+      "assets/products/Solar Emergency System/20W 30W 50W/3.jpg",
+      "assets/products/Solar Emergency System/20W 30W 50W/4.jpg",
+      "assets/products/Solar Emergency System/20W 30W 50W/5.jpg"
+    ]'>
+      <img src="assets/products/Solar Emergency System/20W 30W 50W/1.jpg" alt="20W 30W 50W Solar Emergency Power Bank">
+      <div class="overlay">
+        <h3>20W 30W 50W Solar Emergency Power Bank</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+  "assets/products/Solar Emergency System/12 Inch Portable Solar Fan/2.png",
+  "assets/products/Solar Emergency System/12 Inch Portable Solar Fan/3.jpg",
+  "assets/products/Solar Emergency System/12 Inch Portable Solar Fan/4.webp",
+  "assets/products/Solar Emergency System/12 Inch Portable Solar Fan/4a.webp",
+  "assets/products/Solar Emergency System/12 Inch Portable Solar Fan/5.jpg"
+]'>
+  <img src="assets/products/Solar Emergency System/12 Inch Portable Solar Fan/1.webp" alt="12 Inch Portable Solar Fan">
+  <div class="overlay">
+    <h3>12 Inch Portable Solar Fan</h3>
+  </div>
+</div>
+
+
+  </div>
+</main>
+
+
+  <!-- Swiper Modal -->
+  <div id="swiperModal" style="display: none">
+    <button id="closeModal" aria-label="Close modal">✖</button>
+
+    <div class="swiper swiper-main">
+      <div class="swiper-wrapper" id="swiperMainWrapper"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper swiper-thumbs">
+      <div class="swiper-wrapper" id="swiperThumbWrapper"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer role="contentinfo">
     <div class="footer-container">
       <p>&copy; 2025 Aecons Architecture. All rights reserved.</p>
@@ -26,7 +134,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/sl.js" defer></script>
 </body>
 </html>
