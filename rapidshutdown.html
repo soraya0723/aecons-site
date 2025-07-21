@@ -13,12 +13,121 @@
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/utilities.css" />
-  <link rel="stylesheet" href="css/procard.css" />
+  <link rel="stylesheet" href="css/rapid.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
 
+  <!-- MAIN PROJECTS SECTION -->
+<main class="projects-section">
+  <h2>RAPID SHUTDOWN DEVICE</h2>
 
-<!-- Footer -->
+  <div class="gallery">
+    
+    <div class="gallery-item" data-images='[
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/0.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/1.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/2.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/3.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/4.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/5.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/6.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device String Level/7.jpg"
+    ]'>
+      <img src="assets/products/RAPID SHUTDOWN DEVICE/Device String Level/0.jpg" alt="Rapid Shutdown Device String Level">
+      <div class="overlay">
+        <h3>Rapid Shutdown Device String Level</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Controller Box/0.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Controller Box/1.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Controller Box/2.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Controller Box/3.jpg"
+    ]'>
+      <img src="assets/products/RAPID SHUTDOWN DEVICE/Device Controller Box/0.jpg" alt="Rapid Shutdown Device Controller Box">
+      <div class="overlay">
+        <h3>Projoy Rapid Shutdown Device Controller Box</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Panel Level/0.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Panel Level/1.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Panel Level/2.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Panel Level/3.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Panel Level/4.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Device Panel Level/5.jpg"
+    ]'>
+      <img src="assets/products/RAPID SHUTDOWN DEVICE/Device Panel Level/0.jpg" alt="Rapid Shutdown Device Panel Level">
+      <div class="overlay">
+        <h3>Projoy Rapid Shutdown Device Panel Level</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/0.webp",
+      "assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/1.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/2.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/3.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/4.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/5.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/6.jpg"
+    ]'>
+      <img src="assets/products/RAPID SHUTDOWN DEVICE/breaker 2pole 4pole/0.webp" alt="Projoy DC breaker 2pole 4pole">
+      <div class="overlay">
+        <h3>Projoy DC breaker 2pole 4pole</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-images='[
+      "assets/products/RAPID SHUTDOWN DEVICE/Case Circuit Breaker/0.png",
+      "assets/products/RAPID SHUTDOWN DEVICE/Case Circuit Breaker/1.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Case Circuit Breaker/2.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Case Circuit Breaker/3.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Case Circuit Breaker/4.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Case Circuit Breaker/5.jpg"
+    ]'>
+      <img src="assets/products/RAPID SHUTDOWN DEVICE/Case Circuit Breaker/0.png" alt="Projoy DC Molded Case Circuit Breaker">
+      <div class="overlay">
+        <h3>Projoy DC Molded Case Circuit Breaker</h3>
+      </div>
+    </div>
+      <div class="gallery-item" data-images='[
+      "assets/products/RAPID SHUTDOWN DEVICE/Distribution Box/0.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Distribution Box/1.jpg",
+      "assets/products/RAPID SHUTDOWN DEVICE/Distribution Box/2.jpg"
+    ]'>
+      <img src="assets/products/RAPID SHUTDOWN DEVICE/Distribution Box/0.jpg" alt="Projoy Distribution Box">
+      <div class="overlay">
+        <h3>Projoy Distribution Box</h3>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+  <!-- Swiper Modal -->
+  <div id="swiperModal" style="display: none">
+    <button id="closeModal" aria-label="Close modal">✖</button>
+
+    <div class="swiper swiper-main">
+      <div class="swiper-wrapper" id="swiperMainWrapper"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper swiper-thumbs">
+      <div class="swiper-wrapper" id="swiperThumbWrapper"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer role="contentinfo">
     <div class="footer-container">
       <p>&copy; 2025 Aecons Architecture. All rights reserved.</p>
@@ -26,7 +135,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/sl.js" defer></script>
 </body>
 </html>

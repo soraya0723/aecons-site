@@ -1,0 +1,134 @@
+/* ========================
+   Water Pump Gallery Styles
+   ======================== */
+
+body {
+  font-family: "Arial Narrow", sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Section Title ===== */
+.projects-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.projects-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+/* ===== Gallery Grid ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.3s;
+}
+.gallery-item:hover {
+  transform: translateY(-4px);
+}
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Overlay Text ===== */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #fff;
+}
+.overlay h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.overlay p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0;
+}
+
+/* ===== Swiper Modal ===== */
+#swiperModal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+#closeModal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* ===== Swiper Containers ===== */
+.swiper-main {
+  width: 90%;
+  max-width: 1000px;
+  margin-bottom: 1rem;
+}
+.swiper-main img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+.swiper-thumbs {
+  width: 90%;
+  max-width: 1000px;
+}
+.swiper-thumbs .swiper-slide {
+  height: 60px;
+  opacity: 0.4;
+}
+.swiper-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.swiper-thumbs img {
+  height: 60px;
+  object-fit: cover;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ===== Scroll Animation (Optional) ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+.reveal.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
