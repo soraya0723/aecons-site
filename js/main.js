@@ -1,41 +1,27 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // 🔹 Navbar Injection
-  if (!document.querySelector('.navbar')) {
-    const res = await fetch('components/navbar.html');
-    const html = await res.text();
-    document.body.insertAdjacentHTML('afterbegin', html);
+  // 🔹 Navbar Injection (Always Visible, No Toggle)
+if (!document.querySelector('.navbar')) {
+  const res = await fetch('components/navbar.html');
+  const html = await res.text();
+  document.body.insertAdjacentHTML('afterbegin', html);
 
-    const toggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
+  // Optional: Hide menu on link click (for mobile UX)
+  document.querySelectorAll('.nav-links a').forEach(link =>
+    link.addEventListener('click', () => {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu?.classList.remove('show');
+    })
+  );
 
-    // Toggle menu when logo is clicked
-    toggle?.addEventListener('click', e => {
-      e.stopPropagation();
-      navMenu?.classList.toggle('show');
-    });
+  // Add 'scrolled' class to navbar when scrolling down
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }
+  });
+}
 
-    // Hide menu when nav link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link =>
-      link.addEventListener('click', () => {
-        navMenu?.classList.remove('show');
-      })
-    );
-
-    // Hide on outside click
-    document.addEventListener('click', e => {
-      if (navMenu?.classList.contains('show') &&
-          !navMenu.contains(e.target) &&
-          !toggle.contains(e.target)) {
-        navMenu.classList.remove('show');
-      }
-    });
-
-    // Add scrolled class to navbar
-    window.addEventListener('scroll', () => {
-      document.querySelector('.navbar')
-        .classList.toggle('scrolled', window.scrollY > 50);
-    });
-  }
 
   // 🔹 Scroll-triggered Reveal
   const observer = new IntersectionObserver((entries, obs) => {
