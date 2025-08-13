@@ -1,17 +1,23 @@
 /* ==== Navbar Container ==== */
 .navbar {
+  background: rgba(0, 0, 0, 0.3); /* translucent black overlay */
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: transparent;
-  transition: background-color 0.3s, box-shadow 0.3s;
   z-index: 1000;
 }
 
 .navbar.scrolled {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent; /* no fill color */
+  backdrop-filter: blur(4px); /* keep glass effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* optional shadow */
 }
+
+
+
 
 /* ==== Inner Flex Layout ==== */
 .nav-inner {

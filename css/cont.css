@@ -1,131 +1,134 @@
-/* Base Reset */
-.contact-details {
-  text-align: center;                    /* Center all text */
-  padding: 20px;
-  background-color: #ecf4fb;
-  border-radius: 8px;
-  border-left: none;                     /* Remove left border */
-  border-top: 5px solid #3498db;         /* Use top border for a centered layout look */
+/* CONTACT SECTION */
+.contact-section {
+  position: relative; /* allows overlay positioning */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px; /* less gap */
+  padding: 60px 4%;
 }
 
-/* Subtitle styling remains unchanged */
-.contact-subtitle {
-  font-size: 1.2em;
-  color: #2980b9;
-  margin-bottom: 15px;
+/* Dark overlay for background image */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(255, 255, 255);
+  z-index: 0;
 }
 
-/* Contact item paragraphs */
-.contact-item {
-  margin-bottom: 15px;
-  font-size: 2rem;
+/* Everything inside stays above the overlay */
+.contact-content {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Label inside contact item */
-.label {
-  font-weight: 600;
-  color: #555;
+.contact-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #000000;
 }
 
-/* Email link */
-.contact-email {
-  color: #2980b9;
+.services-flex {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.services-flex .dot {
+  color: #ffcc00;
+}
+
+/* LEFT COLUMN */
+.contact-left {
+  flex: 1 1 320px;
+  display: flex; /* fixed: was invalid */
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.contact-card p {
+  margin: 6px 0;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.contact-card a {
+  color: #217dbb;
+  font-size: 1.5rem;
   text-decoration: none;
 }
-
-.contact-email:hover {
+.contact-card a:hover {
   text-decoration: underline;
 }
 
-/* Google Maps button */
-.btn.map-link {
+
+
+/* RIGHT COLUMN: MAP */
+.map-wrapper {
+  position: relative;
+  z-index: 2; /* bring it above dark overlay */
+  background: white; /* keeps contrast if background image is used */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  
+}
+
+.map-wrapper iframe,
+.map-wrapper video {
+  width: 600px;
+  height: 400; /* keeps aspect ratio */
+  aspect-ratio: 3 / 2;           /* maintain shape like 600x400 */
+  object-fit: cover;             /* similar to video fit */
+  border: none;
+  
+}
+
+.map-btn-container {
+  text-align: center;
+  padding: 20px;
+  background: rgb(255, 255, 255);
+}
+
+.map-link {
   display: inline-block;
-  margin-top: 20px;
-  background-color: #3498db;
-  color: white;
+  background-color: #163edf; /* coral accent */
+  color: rgb(255, 255, 255);
   padding: 12px 20px;
+  border-radius: 20px;
   text-decoration: none;
-  border-radius: 6px;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
-.btn.map-link:hover {
-  background-color: #217dbb;
+.map-link:hover {
+  background-color: #3009f0;
 }
 
-/* ✅ Shared circle styling for social icons */
-.circle-icon {
-  width: 50px;
-  height: 50px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  border-radius: 50%;
-  background-color: #2980b9;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  .video-wrapper {
+    order: -1; /* video on top for mobile */
+    height: 50vh;
+  }
+   .map-wrapper iframe {
+    height: 40vh;
+    max-height: none;
+  }
 }
-
-.circle-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.circle-icon:hover {
-  background-color: #1c5980;
-  transform: scale(1.1);
-}
-
-/* ✅ Contact-specific social icons wrapper */
-/* Contact section adjustment */
-.contact {
-  position: relative;
-  padding-bottom: 120px; /* Ensures room at bottom for icons */
-}
-
-/* Social icon container */
-.contact .social-icons {
-  position: absolute;
-  bottom: 30px;           /* Distance from bottom of .contact */
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Each circular icon */
-.circle-icon {
-  width: 60px;
-  height: 60px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Optional: add margin between the map button and icons */
-.map-link {
-  margin-bottom: 80px; /* Pushes it up above the icons */
-}
-
-/* Icon SVG size */
-.circle-icon svg {
-  width: 26px;
-  height: 26px;
-}
-
-/* Platform colors */
-.circle-icon.facebook { background-color: #1877f2; }
-.circle-icon.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, 
-              #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
-.circle-icon.linkedin { background-color: #0077b5; }
-
-/* Optional: distinguish by platform */
-.facebook { background-color: #3b5998; }
-.instagram { background-color: #e4405f; }
-.linkedin { background-color: #0077b5; }

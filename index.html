@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/utilities.css" />
   <link rel="stylesheet" href="css/sercard.css" />
+  <link rel="stylesheet" href="css/home.css" />
 </head>
 
 <body>
@@ -28,36 +29,40 @@
   <main class="section hero" aria-label="Hero Banner">
     <div class="hero-overlay" aria-hidden="true"></div>
 
-    <div class="hero-content">
-  <h1>Welcome to Aecons</h1>
-  <div class="services-flex">
-    <span>ARCHITECTURE</span>
-    <span class="dot">•</span>
-    <span>ENGINEERING</span>
-    <span class="dot">•</span>
-    <span>CONSTRUCTION</span>
-  </div>
-</div>
+    
 
 
     <div class="swiper hero-swiper" aria-label="Featured Project Images">
       <div class="swiper-wrapper">
         <!-- Hero Slides -->
-        <div class="swiper-slide"><img src="assets/images/S1a.jpg" alt="Modern house with glass walls" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S1.jpg" alt="Contemporary villa exterior" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S2.png" alt="Concept art of interior design" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S3.png" alt="Digital rendering of building layout" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S4.jpg" alt="Open space architecture" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S5.jpg" alt="Luxury apartment design" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S6.jpg" alt="Futuristic urban design" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S7.jpg" alt="Minimalist house entrance" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S8.jpg" alt="Elegant hallway interior" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S9.jpg" alt="Architectural structure with lighting" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S10.jpg" alt="3D building concept model" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/S11.jpg" alt="Mixed-use development overview" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/1.jpg" alt="Modern house with glass walls" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/2.jpg" alt="Concept art of interior design" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/3.jpg" alt="Digital rendering of building layout" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/4.jpg" alt="Open space architecture" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/5.jpg" alt="Luxury apartment design" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/6.jpg" alt="Futuristic urban design" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/7.jpg" alt="Minimalist house entrance" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/8.jpg" alt="Elegant hallway interior" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/9.jpg" alt="Architectural structure with lighting" loading="lazy"/></div>
+        <div class="swiper-slide"><img src="assets/images/highlights/10.jpg" alt="3D building concept model" loading="lazy"/></div>
       </div>
     </div>
   </main>
+  <!-- About Us Preview Section -->
+  <section class="section about-preview" aria-label="About Aecons">
+    
+    <div class="about-card">
+      <img src="assets/images/2.png" alt="Team of architects reviewing blueprints" loading="lazy" />
+      <div class="about-content">
+        <h3>Who We Are</h3>
+        <p>
+          We are a young, tech-driven design-build firm that values collaboration, adaptability and smart design.
+        </p>
+        <a href="projects.html" class="btn secondary">View More Projects</a>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Services Preview Section -->
   <section class="section services-preview" aria-label="Aecons Services">
@@ -102,24 +107,12 @@
     <a href="projects.html" class="btn secondary centered-btn">View All Projects</a>
   </section>
 
-  <!-- About Us Preview Section -->
-  <section class="section about-preview" aria-label="About Aecons">
-    <h2>About Aecons</h2>
-    <div class="about-card">
-      <img src="assets/images/Screenshot 2025-07-10 152318.png" alt="Team of architects reviewing blueprints" loading="lazy" />
-      <div class="about-content">
-        <h3>Who We Are</h3>
-        <p>
-          Aecons is a cutting-edge architecture and engineering firm focused on sustainable, elegant, and functional spaces.
-          Our team brings years of experience delivering bespoke construction solutions across residential, commercial, and urban projects.
-        </p>
-        <a href="about.html" class="btn secondary">Learn More About Us</a>
-      </div>
-    </div>
-  </section>
+  
+
+
   <!-- Products Preview Section -->
   <section class="section products-preview" aria-label="Aecons Products">
-    <h2>Solar Light Products</h2>
+    <img src="assets/icon/ae.png" alt="Aecons Logo" class="logo-img" />
     <div class="product-grid">
       <article class="product-card">
         <img src="assets/products/prothumb/all-in-one.jpeg" alt="All-in-One Solar Light" loading="lazy" />
@@ -139,15 +132,78 @@
     </div>
     <a href="products.html" class="btn secondary centered-btn">Browse All Products</a>
   </section>
+  <div class="video-wrapper">
+  <video autoplay muted loop playsinline>
+    <source src="assets/video/facebook mobile.mp4" type="video/mp4">
+    <source src="assets/video/facebook mobile.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="text-content">
+    <h3>Let's build connections </h3>
+    <h3>through design.</h3>
+    <br>
+
+    <p>"At Aecons Design, we transform bold ideas into lasting realities — </p>
+    <p>blending creative vision with innovative solutions to build spaces</p>
+    <p>that inspire and endure."</p>
+  </div>
+</div>
 
 
   <!-- Footer -->
-  <footer role="contentinfo">
-    <p>&copy; 2025 Aecons Architecture. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>"Advancing excellence in construction."</p>
+  <p>Follow Us</p>
+  <div class="social-icons">
+    <a href="https://facebook.com/Aecons2021" class="circle-icon facebook" target="_blank" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="white" d="M279.1 288l14.2-92.7h-88.9V129.3
+                 c0-25.4 12.4-50.1 52.2-50.1H295V6.3
+                 S277.4 0 256.5 0c-73.2 0-121.5 44.4
+                 -121.5 124.7v70.6H96v92.7h39v224.7
+                 h96.4V288z"/>
+      </svg>
+    </a>
+
+    <a href="https://instagram.com/aeconsdesignbuild" class="circle-icon instagram" target="_blank" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="white" d="M224.1 141c-63.6 0-115.1 51.5-115.1
+                 115.1s51.5 115.1 115.1 115.1 115.1
+                 -51.5 115.1-115.1S287.7 141 224.1 141z
+                 m0 189.6c-41.1 0-74.5-33.4-74.5-74.5
+                 s33.4-74.5 74.5-74.5 74.5 33.4 74.5
+                 74.5-33.4 74.5-74.5 74.5zM398.8 388
+                 c-7.8 19.5-22.9 34.6-42.4 42.4-29.4
+                 11.7-99.3 9-132.3 9s-102.9 2.6-132.3
+                 -9c-19.5-7.8-34.6-22.9-42.4-42.4
+                 -11.7-29.4-9-99.3-9-132.3s-2.6-102.9
+                 9-132.3c7.8-19.5 22.9-34.6 42.4-42.4
+                 29.4-11.7 99.3-9 132.3-9s102.9-2.6
+                 132.3 9c19.5 7.8 34.6 22.9 42.4 42.4
+                 11.7 29.4 9 99.3 9 132.3s2.6 102.9-9
+                 132.3z"/>
+      </svg>
+    </a>
+
+    <a href="https://www.linkedin.com/company/aecons-design/" class="circle-icon linkedin" target="_blank" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="white" d="M100.28 448H7.4V148.9h92.88zm-46.44-341a53.79
+        53.79 0 1 1 53.79-53.8 53.79 53.79 0 0 1-53.8 53.8zM447.9
+        448h-92.68V302.4c0-34.7-12.45-58.4-43.6-58.4-23.76 0-37.88
+        16-44.1 31.4-2.28 5.5-2.85 13.2-2.85
+        20.9V448h-92.78s1.24-267.4 0-295.1h92.78v41.8c-.19.3-.43.7-.62
+        1h.62v-1c12.3-19 34.3-46.1 83.52-46.1
+        60.96 0 106.72 39.8 106.72 125.2V448z"/>
+      </svg>
+    </a>
+  </div>
+  <p>© Aecons Architecture 2025</p>
+</footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/home.js" defer></script>
 </body>
 </html>

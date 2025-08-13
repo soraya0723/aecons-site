@@ -1,7 +1,7 @@
 /* === SECTION STYLES === */
 .section {
   padding: 6rem 2rem 4rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 .section.projects {
@@ -18,20 +18,23 @@
 /* === HERO SECTION === */
 .hero {
   position: relative;
-  height: 90vh;
+  height: 900px;
   color: #fff;
   text-align: center;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Make sure it starts at the top behind navbar */
+  margin-top: 0;
+  background: url('your-hero-image.jpg') center/cover no-repeat; /* example */
 }
 
 /* Overlay for darkening background */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
   pointer-events: none;
 }

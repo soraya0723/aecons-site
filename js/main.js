@@ -1,27 +1,30 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // 🔹 Navbar Injection (Always Visible, No Toggle)
-if (!document.querySelector('.navbar')) {
-  const res = await fetch('components/navbar.html');
-  const html = await res.text();
-  document.body.insertAdjacentHTML('afterbegin', html);
+  // 🔹 Navbar Injection (Single Load)
+  if (!document.querySelector('.navbar')) {
+    const res = await fetch('components/navbar.html');
+    const html = await res.text();
+    document.body.insertAdjacentHTML('afterbegin', html);
 
-  // Optional: Hide menu on link click (for mobile UX)
-  document.querySelectorAll('.nav-links a').forEach(link =>
-    link.addEventListener('click', () => {
-      const navMenu = document.getElementById('nav-menu');
-      navMenu?.classList.remove('show');
-    })
-  );
-
-  // Add 'scrolled' class to navbar when scrolling down
-  window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (navbar) {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    }
-  });
-}
 
+    // Optional: Hide menu on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link =>
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu')?.classList.remove('show');
+      })
+    );
+
+    // ✅ Smooth fade from transparent to white
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      let opacity = Math.min(scrollTop / 80, 1); // smoother transition
+      navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+      navbar.style.backdropFilter = opacity < 1 ? 'blur(10px)' : 'none';
+      navbar.style.boxShadow = opacity > 0.2
+        ? '0 2px 8px rgba(0,0,0,0.1)'
+        : 'none';
+    });
+  }
 
   // 🔹 Scroll-triggered Reveal
   const observer = new IntersectionObserver((entries, obs) => {
@@ -116,10 +119,8 @@ if (!document.querySelector('.navbar')) {
       thumbWrapper.innerHTML = '';
 
       images.forEach(src => {
-        const mainSlide = `<div class="swiper-slide"><img src="${src}" alt="Project Image"></div>`;
-        const thumbSlide = `<div class="swiper-slide"><img src="${src}" alt="Thumbnail"></div>`;
-        mainWrapper.insertAdjacentHTML('beforeend', mainSlide);
-        thumbWrapper.insertAdjacentHTML('beforeend', thumbSlide);
+        mainWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><img src="${src}" alt="Project Image"></div>`);
+        thumbWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><img src="${src}" alt="Thumbnail"></div>`);
       });
 
       modal.style.display = 'block';
