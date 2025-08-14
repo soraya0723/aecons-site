@@ -42,7 +42,7 @@
 .text-content {
   position: relative;
   bottom: 20px;
-  left: 30%;
+  left: 25%;
   transform: translateX(-50%);
   color: #000;
   text-align: center;
