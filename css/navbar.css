@@ -1,39 +1,59 @@
 /* ==== Navbar Container ==== */
 .navbar {
-  background: rgba(0, 0, 0, 0.3); /* translucent black overlay */
-  backdrop-filter: blur(4px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgb(167 147 147 / 94%);
+  backdrop-filter: blur(10px); /* frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  color: #ae3c3c; /* deep red for text contrast */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar.scrolled {
-  background: transparent; /* no fill color */
-  backdrop-filter: blur(4px); /* keep glass effect */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* optional shadow */
+/* Links inside navbar */
+.navbar a {
+  color: #c30000; /* make sure text is visible over glassy bg */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6); /* improves readability */
 }
+
+/* After scroll */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.4); /* slightly darker glass on scroll */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+
+
 
 
 
 
 /* ==== Inner Flex Layout ==== */
+/* Navbar container */
 .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-direction: row-reverse; /* 👈 This flips logo to the right */
+  justify-content: space-between;
+  flex-direction: row-reverse; /* flip logo to the right */
+  padding: 0 20px;
 }
 
-/* ==== Logo ==== */
+/* Logo styles */
 .logo img {
-  height: 40px;
+  height: 48px;
+  max-height: 8vh;
+  width: auto;
+  object-fit: contain;
+  margin-left: 20px; /* space between logo and menu */
+
 }
+
+
+
 
 /* ==== Nav Links ==== */
 .nav-links {
@@ -42,13 +62,16 @@
   gap: 2rem;
   margin: 0;
   padding: 0;
+  
 }
 
 .nav-links li a {
   text-decoration: none;
-  color: #333;
+  color: #000000bc;
   font-weight: 500;
   transition: color 0.2s ease;
+  margin-right: 50px; 
+  
 }
 
 .nav-links li a:hover {

@@ -18,18 +18,34 @@
 /* === HERO SECTION === */
 .hero {
   position: relative;
-  height: 900px;
-  color: #fff;
+  min-height: 100vh; /* make it at least full screen height */
+  color: #cc2b2b;
   text-align: center;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0;
+  background-color: rgb(88, 88, 88); /* fills background where image doesn't cover */
 
   /* Make sure it starts at the top behind navbar */
   margin-top: 0;
   background: url('your-hero-image.jpg') center/cover no-repeat; /* example */
 }
+/* Blurred background layer */
+.hero-bg-blur {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('your-hero-image.jpg'); /* same as hero */
+  background-size: cover;
+  background-position: center;
+  filter: blur(60px);      /* adjust blur intensity */
+  transform: scale(1.1);   /* optional: slightly enlarge to hide edges */
+  z-index: 0;
+}
+
 
 /* Overlay for darkening background */
 .hero-overlay {
@@ -57,14 +73,21 @@
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-swiper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background-color: rgb(181, 177, 177); /* match body background */
+  transition: transform 0.4s ease;
+  z-index: 2;
+  position: relative;
 }
+
+
 
 /* === ANIMATIONS === */
 @keyframes fadeInUp {

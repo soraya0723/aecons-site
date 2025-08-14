@@ -14,17 +14,45 @@ document.addEventListener('DOMContentLoaded', async () => {
       })
     );
 
-    // ✅ Smooth fade from transparent to white
+    // ✅ Always glassy fade effect
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       let opacity = Math.min(scrollTop / 80, 1); // smoother transition
-      navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
-      navbar.style.backdropFilter = opacity < 1 ? 'blur(10px)' : 'none';
-      navbar.style.boxShadow = opacity > 0.2
+
+      // Start slightly white (0.3) and get a bit more solid as we scroll
+      navbar.style.backgroundColor = `rgba(255, 255, 255, ${0.3 + opacity * 0.4})`;
+
+      // Keep blur effect at all times
+      navbar.style.backdropFilter = 'blur(10px)';
+      navbar.style.webkitBackdropFilter = 'blur(10px)';
+
+      // Add subtle shadow after scrolling a little
+      navbar.style.boxShadow = opacity > 0.1
         ? '0 2px 8px rgba(0,0,0,0.1)'
         : 'none';
     });
   }
+  // === Responsive zoom for the main image ===
+function updateHeroZoom() {
+  const img = document.querySelector('.hero-swiper img');
+  const bg = document.querySelector('.hero-bg-blur');
+  if (!img || !bg) return;
+
+  const viewportRatio = window.innerWidth / window.innerHeight;
+  const idealRatio = 16 / 9; // adjust to your image's natural ratio
+
+  // Compute fluid zoom factor, capped at 1.15 max
+  let zoom = 1 + Math.min(0.15, Math.max(0, (idealRatio / viewportRatio - 1)));
+
+  img.style.transform = `scale(${zoom})`;
+  bg.style.transform = `scale(${zoom + 0.05})`; // slightly more zoom for blur to hide edges
+}
+
+// Run on load & resize
+window.addEventListener('load', updateHeroZoom);
+window.addEventListener('resize', updateHeroZoom);
+
+
 
   // 🔹 Scroll-triggered Reveal
   const observer = new IntersectionObserver((entries, obs) => {
