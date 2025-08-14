@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=1400, initial-scale=1.0">
   <title>Aecons | Home</title>
   <meta name="description" content="Aecons is a modern architecture firm specializing in sustainable and innovative design. Get a quote or explore our projects.">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
@@ -26,28 +26,57 @@
 <body>
 
   <!-- Hero Section with Swiper Background -->
-  <main class="section hero" aria-label="Hero Banner">
-    <div class="hero-overlay" aria-hidden="true"></div>
-
-    
-
-
-    <div class="swiper hero-swiper" aria-label="Featured Project Images">
-      <div class="swiper-wrapper">
-        <!-- Hero Slides -->
-        <div class="swiper-slide"><img src="assets/images/highlights/1.jpg" alt="Modern house with glass walls" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/2.jpg" alt="Concept art of interior design" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/3.jpg" alt="Digital rendering of building layout" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/4.jpg" alt="Open space architecture" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/5.jpg" alt="Luxury apartment design" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/6.jpg" alt="Futuristic urban design" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/7.jpg" alt="Minimalist house entrance" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/8.jpg" alt="Elegant hallway interior" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/9.jpg" alt="Architectural structure with lighting" loading="lazy"/></div>
-        <div class="swiper-slide"><img src="assets/images/highlights/10.jpg" alt="3D building concept model" loading="lazy"/></div>
+<main class="section hero" aria-label="Hero Banner">
+  <div class="swiper hero-swiper" aria-label="Featured Project Images">
+    <div class="swiper-wrapper">
+      <!-- Each slide has its own blurred background + sharp foreground -->
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/1.jpg')"></div>
+        <img src="assets/images/highlights/1.jpg" alt="Modern house with glass walls" loading="lazy" />
       </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/2.jpg')"></div>
+        <img src="assets/images/highlights/2.jpg" alt="Concept art of interior design" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/3.jpg')"></div>
+        <img src="assets/images/highlights/3.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/4.jpg')"></div>
+        <img src="assets/images/highlights/4.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/5.jpg')"></div>
+        <img src="assets/images/highlights/5.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/6.jpg')"></div>
+        <img src="assets/images/highlights/6.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/7.jpg')"></div>
+        <img src="assets/images/highlights/7.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/8.jpg')"></div>
+        <img src="assets/images/highlights/8.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/9.jpg')"></div>
+        <img src="assets/images/highlights/9.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-blur" style="background-image:url('assets/images/highlights/10.jpg')"></div>
+        <img src="assets/images/highlights/10.jpg" alt="Digital rendering of building layout" loading="lazy" />
+      </div>
+
+      <!-- Add more slides as needed -->
     </div>
-  </main>
+  </div>
+</main>
+
+
   <!-- About Us Preview Section -->
   <section class="section about-preview" aria-label="About Aecons">
     
@@ -205,5 +234,8 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/home.js" defer></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
 </body>
 </html>

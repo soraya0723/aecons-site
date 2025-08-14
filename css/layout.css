@@ -18,47 +18,70 @@
 /* === HERO SECTION === */
 .hero {
   position: relative;
-  min-height: 100vh; /* make it at least full screen height */
-  color: #cc2b2b;
-  text-align: center;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0;
-  background-color: rgb(88, 88, 88); /* fills background where image doesn't cover */
-
-  /* Make sure it starts at the top behind navbar */
-  margin-top: 0;
-  background: url('your-hero-image.jpg') center/cover no-repeat; /* example */
+  bottom: 200px;
 }
-/* Blurred background layer */
-.hero-bg-blur {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
+
+/* Swiper container full screen */
+.hero-swiper {
+  height: 100vh;
+}
+
+.swiper-slide {
+  position: relative;
   height: 100%;
-  background-image: url('your-hero-image.jpg'); /* same as hero */
+  overflow: hidden;
+}
+
+/* Blurred background layer */
+:root {
+  --navbar-height: 90px; /* match your navbar height */
+}
+
+.slide-blur {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100%;
   background-size: cover;
-  background-position: center;
-  filter: blur(60px);      /* adjust blur intensity */
-  transform: scale(1.1);   /* optional: slightly enlarge to hide edges */
+  background-position: top center;
+  filter: blur(20px) brightness(0.7);
+  transform: scale(1.05);
   z-index: 0;
+  transition: opacity 0.6s ease;
+}
+
+.swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: center; /* horizontal centering */
+  height: 100%;
+  padding-top: var(--navbar-height); /* so content starts below navbar */
+  box-sizing: border-box;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: calc(100% - var(--navbar-height));
+  object-fit: contain; /* keep proportions */
+  position: relative;
+  z-index: 1;
 }
 
 
-/* Overlay for darkening background */
+/* Optional overlay for darkening content */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  pointer-events: none;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 
-/* Centered content */
+/* Content above everything */
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   max-width: 800px;
   padding: 0 1rem;
   text-align: center;
@@ -67,28 +90,6 @@
   opacity: 0;
 }
 
-/* Swiper container */
-.hero-swiper {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-swiper img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  background-color: rgb(181, 177, 177); /* match body background */
-  transition: transform 0.4s ease;
-  z-index: 2;
-  position: relative;
-}
-
-
-
 /* === ANIMATIONS === */
 @keyframes fadeInUp {
   to {
@@ -96,6 +97,11 @@
     opacity: 1;
   }
 }
+
+
+
+
+
 .services-flex {
   display: flex;
   justify-content: center;

@@ -32,25 +32,41 @@ document.addEventListener('DOMContentLoaded', async () => {
         : 'none';
     });
   }
-  // === Responsive zoom for the main image ===
-function updateHeroZoom() {
-  const img = document.querySelector('.hero-swiper img');
-  const bg = document.querySelector('.hero-bg-blur');
-  if (!img || !bg) return;
+   // Auto-generate blurred background layers per slide
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".hero-swiper .swiper-slide").forEach(slide => {
+    const img = slide.querySelector("img");
+    if (img && !slide.querySelector(".slide-blur")) {
+      const blurDiv = document.createElement("div");
+      blurDiv.className = "slide-blur";
+      blurDiv.style.backgroundImage = `url('${img.src}')`;
+      slide.prepend(blurDiv);
+    }
+  });
 
-  const viewportRatio = window.innerWidth / window.innerHeight;
-  const idealRatio = 16 / 9; // adjust to your image's natural ratio
+  // Init Swiper
+  new Swiper(".hero-swiper", {
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    speed: 800
+  });
+});
 
-  // Compute fluid zoom factor, capped at 1.15 max
-  let zoom = 1 + Math.min(0.15, Math.max(0, (idealRatio / viewportRatio - 1)));
 
-  img.style.transform = `scale(${zoom})`;
-  bg.style.transform = `scale(${zoom + 0.05})`; // slightly more zoom for blur to hide edges
-}
 
-// Run on load & resize
-window.addEventListener('load', updateHeroZoom);
-window.addEventListener('resize', updateHeroZoom);
+
+
+
+
+
+
+
+
 
 
 

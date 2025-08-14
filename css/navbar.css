@@ -1,9 +1,9 @@
 /* ==== Navbar Container ==== */
 .navbar {
-  background-color: rgb(167 147 147 / 94%);
+  background-color: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(10px); /* frosted glass effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  color: #ae3c3c; /* deep red for text contrast */
+  color: #ffffff; /* deep red for text contrast */
   position: fixed;
   top: 0;
   left: 0;
@@ -40,6 +40,7 @@
   justify-content: space-between;
   flex-direction: row-reverse; /* flip logo to the right */
   padding: 0 20px;
+  height: 100px;
 }
 
 /* Logo styles */
@@ -70,7 +71,7 @@
   color: #000000bc;
   font-weight: 500;
   transition: color 0.2s ease;
-  margin-right: 50px; 
+  margin-right: 90px; 
   
 }
 
