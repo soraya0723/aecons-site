@@ -42,7 +42,7 @@
   position: absolute;
   left: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   background-position: top center;
   filter: blur(20px) brightness(0.7);
@@ -96,27 +96,5 @@
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-
-
-
-
-.services-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px; /* more breathing room */
-  font-weight: bold;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.services-flex .dot {
-  font-size: 2.2rem; /* BIGGER DOT */
-  line-height: 0.5;
-  color: #ffffff; /* Optional: softer color for dot */
-  transform: translateY(-2px); /* Fine-tune alignment */
 }
 

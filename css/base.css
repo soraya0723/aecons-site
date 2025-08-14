@@ -4,6 +4,20 @@
 }
 body {
   font-family: "Arial Narrow", Arial, sans-serif;
-  background: rgb(255, 255, 255); color: #000000; line-height: 1.6;
-  min-width: 1400px; /* Same number as above */
+  min-width: 1400px;
+  color: #000000;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blurred gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #dcdcdc, #c0c0c0, #e0e0e0, #b0b0b0);
+  filter: blur(20px);
+  transform: scale(1.05); /* avoid edge clipping */
+  z-index: -1;
 }

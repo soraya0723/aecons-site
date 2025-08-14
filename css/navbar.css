@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse; /* flip logo to the right */
-  padding: 0 20px;
+  padding: 0 90px;
   height: 100px;
 }
 
