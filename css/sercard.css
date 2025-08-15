@@ -167,12 +167,14 @@
   border: none;
 }
 
-/* Primary Button */
+/* Primary Button - Always Centered */
 .btn.primary {
   background: transparent;
   color: #0077b6;
   box-shadow: 0 6px 15px rgba(0, 119, 182, 0.1);
-  margin-left: 32rem;
+  display: block;        /* Allows margin auto centering */
+  margin: 2rem auto;     /* Centers horizontally */
+  text-align: center;    /* Ensures text is centered */
 }
 
 .btn.primary:hover {
@@ -181,6 +183,7 @@
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
+
 
 /* Secondary Button */
 .btn.secondary {
