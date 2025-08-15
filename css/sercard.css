@@ -1,5 +1,8 @@
 
 /* === SERVICES PREVIEW === */
+.services-preview {
+  text-align: center; /* Centers heading & button together */
+}
 .services-preview h2 {
   font-size: 2.2rem;
   font-weight: bold;
@@ -9,6 +12,7 @@
   transform: translateY(30px);
   animation: fadeUp 0.8s ease forwards;
   margin-left: 2rem;
+  text-align: center;
 }
 
 .service-grid {
@@ -167,14 +171,16 @@
   border: none;
 }
 
-/* Primary Button - Always Centered */
+/* Primary Button - Always Centered & Shorter */
 .btn.primary {
   background: transparent;
   color: #0077b6;
   box-shadow: 0 6px 15px rgba(0, 119, 182, 0.1);
-  display: block;        /* Allows margin auto centering */
-  margin: 2rem auto;     /* Centers horizontally */
-  text-align: center;    /* Ensures text is centered */
+  display: inline-block;  /* Only as wide as content */
+  padding: 0.8rem 1.8rem; /* Space around text */
+  margin: 2rem auto;      /* Centers when using text-align center on parent */
+  font-weight: 600;
+  border-radius: 50px;    /* Rounded pill shape */
 }
 
 .btn.primary:hover {
@@ -183,6 +189,7 @@
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
+
 
 
 /* Secondary Button */
