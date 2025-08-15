@@ -132,7 +132,7 @@ The firm’s process revolves around a commitment to collaboration, recognizing 
 
   <!-- Products Preview Section -->
   <section class="section products-preview" aria-label="Aecons Products">
-    <img src="assets/icon/ae.png" alt="Aecons Logo" class="logo-img" />
+    <img src="assets/icon/viber_image_2025-08-15_14-50-31-958.png" alt="Aecons Logo" class="logo-img" />
     <div class="product-grid">
       <article class="product-card">
         <img src="assets/products/prothumb/all-in-one.jpeg" alt="All-in-One Solar Light" loading="lazy" />
@@ -247,7 +247,24 @@ The firm’s process revolves around a commitment to collaboration, recognizing 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/home.js" defer></script>
-  
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+      } else {
+        entry.target.classList.remove("animate-in"); // so it replays when re-entering
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".service-card, .product-card").forEach(card => {
+    observer.observe(card);
+  });
+});
+</script>
+
 
 </body>
 </html>

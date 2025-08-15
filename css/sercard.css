@@ -101,7 +101,14 @@
 
 /* === PRODUCTS PREVIEW === */
 .products-preview {
-  background: linear-gradient(180deg, #cd0909, #ffffff);
+  background: linear-gradient(
+  315deg, /* opposite of 135deg */
+  #cd0909,
+  #f24e1e,
+  #f6a500,
+  #ffe8cc
+);
+
   padding: 60px 20px;
   text-align: center;
 }
@@ -114,7 +121,8 @@
 }
 
 .product-card {
-  background-color: #fff;
+  background: linear-gradient(135deg, #cd0909, #f24e1e, #f6a500, #ffe8cc);
+
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
@@ -210,4 +218,61 @@
 /* Optional: Smooth "click" effect */
 .btn:active {
   transform: translateY(-1px) scale(0.98);
+}
+/* === Cool Animation Add-ons === */
+
+/* Subtle float-in for cards when they appear */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Base state - hidden */
+.service-card, .product-card {
+  opacity: 0;
+}
+
+/* Triggered when in view */
+.animate-in {
+  animation: floatUp 0.8s ease forwards;
+}
+
+/* Stagger animation for grid items */
+.service-grid .service-card:nth-child(1).animate-in { animation-delay: 0.2s; }
+.service-grid .service-card:nth-child(2).animate-in { animation-delay: 0.4s; }
+.service-grid .service-card:nth-child(3).animate-in { animation-delay: 0.6s; }
+.product-grid .product-card:nth-child(1).animate-in { animation-delay: 0.2s; }
+.product-grid .product-card:nth-child(2).animate-in { animation-delay: 0.4s; }
+.product-grid .product-card:nth-child(3).animate-in { animation-delay: 0.6s; }
+
+/* Cool hover "lift & glow" effect */
+.service-card:hover, .product-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Glow outline on hover */
+.service-card:hover::after, .product-card:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(131, 178, 65, 0.4);
+  pointer-events: none;
+  opacity: 0;
+  animation: glowPulse 0.6s forwards;
+}
+
+/* Glow pulse animation */
+@keyframes glowPulse {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
