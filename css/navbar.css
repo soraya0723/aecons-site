@@ -1,120 +1,32 @@
-/* ==== Navbar Container ==== */
+/* Navbar */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(10px); /* frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  color: #ffffff; /* deep red for text contrast */
+  background-color: #ffffff; /* dark from your palette */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  border-bottom: 1px solid #5d5852; /* subtle warm gray border */
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Links inside navbar */
-.navbar a {
-  color: #c30000; /* make sure text is visible over glassy bg */
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6); /* improves readability */
-}
-
-/* After scroll */
-.navbar.scrolled {
-  background: rgba(0, 0, 0, 0.4); /* slightly darker glass on scroll */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-
-
-
-
-
-
-/* ==== Inner Flex Layout ==== */
-/* Navbar container */
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse; /* flip logo to the right */
-  padding: 0 90px;
-  height: 100px;
-}
-
-/* Logo styles */
-.logo img {
-  height: 48px;
-  max-height: 8vh;
-  width: auto;
-  object-fit: contain;
-  margin-left: 20px; /* space between logo and menu */
-
-}
-
-
-
-
-/* ==== Nav Links ==== */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  
-}
-
-/* ==== Navbar Container ==== */
-.navbar {
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Links inside navbar */
-.navbar a {
-  position: relative;
-  color: #c30000;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-  text-decoration: none;
-}
-
-/* After scroll */
-.navbar.scrolled {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* ==== Inner Flex Layout ==== */
+/* Inner layout — links left, logo right */
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
   padding: 0 90px;
-  height: 100px;
+  height: 80px;
 }
 
-/* Logo styles */
+/* Logo */
 .logo img {
   height: 48px;
-  max-height: 8vh;
   width: auto;
   object-fit: contain;
-  margin-left: 20px;
 }
 
-/* ==== Nav Links ==== */
+/* Nav links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -123,22 +35,15 @@
   padding: 0;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #000000bc;
-  font-weight: 500;
-  margin-right: 10px;
-  transition: color 0.2s ease, transform 0.3s ease;
-}
-
-/* 3D Pop-up Effect */
+/* 3D Animation */
 .nav-links li a {
   position: relative;
   display: inline-block;
   padding: 8px 12px;
-  color: #000000bc;
-  font-weight: 500;
   text-decoration: none;
+  color: #252522; /* dark text for contrast */
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
 }
@@ -148,7 +53,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Optional Shine Animation */
+/* Gold Shine Animation */
 .nav-links li a::before {
   content: "";
   position: absolute;
@@ -157,10 +62,12 @@
   width: 50%;
   height: 100%;
   background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0) 80%
-  );
+  120deg,
+  rgba(134, 124, 116, 0.7) 0%, /* taupe metallic from #867c74 */
+  rgba(255, 255, 255, 0) 80%
+);
+
+
   transform: skewX(-25deg);
 }
 
@@ -174,19 +81,17 @@
   }
 }
 
-
-
-/* ==== Responsive (Mobile) ==== */
+/* Responsive — still always visible */
 @media (max-width: 768px) {
   .nav-inner {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row-reverse;
+    padding: 0 20px;
+    height: auto;
   }
 
   .nav-links {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem 2rem;
-    margin-top: 1rem;
+    justify-content: flex-start;
+    gap: 1rem;
   }
 }

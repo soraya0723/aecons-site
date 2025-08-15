@@ -15,86 +15,30 @@
 }
 
 
-/* === HERO SECTION === */
-.hero {
-  position: relative;
-  overflow: hidden;
-  bottom: 200px;
-}
-
-/* Swiper container full screen */
+/* === HERO SECTION (FULL IMAGE, NO CROP, NO BLACK) === */
 .hero-swiper {
-  height: 100vh;
+  width: 100%;
+  background: transparent;
 }
 
 .swiper-slide {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Blurred background layer */
-:root {
-  --navbar-height: 90px; /* match your navbar height */
-}
-
-.slide-blur {
-  position: absolute;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: top center;
-  filter: blur(20px) brightness(0.7);
-  transform: scale(1.05);
-  z-index: 0;
-  transition: opacity 0.6s ease;
-}
-
-.swiper-slide {
-  position: relative;
   display: flex;
-  align-items: center; /* vertical centering */
-  justify-content: center; /* horizontal centering */
-  height: 100%;
-  padding-top: var(--navbar-height); /* so content starts below navbar */
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
 .swiper-slide img {
-  max-width: 100%;
-  max-height: calc(100% - var(--navbar-height));
-  object-fit: contain; /* keep proportions */
-  position: relative;
-  z-index: 1;
+  width: 100%;
+  height: auto;        /* keep original ratio */
+  object-fit: contain; /* show full image */
+  background: transparent;
 }
 
 
-/* Optional overlay for darkening content */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: 2;
-}
 
-/* Content above everything */
-.hero-content {
-  position: relative;
-  z-index: 4;
-  max-width: 800px;
-  padding: 0 1rem;
-  text-align: center;
-  transform: translateY(-10%);
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-}
 
-/* === ANIMATIONS === */
-@keyframes fadeInUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+
+
+
 
