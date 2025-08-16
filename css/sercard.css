@@ -6,7 +6,7 @@
 .services-preview h2 {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #83b241;
+  color: #252522;
   margin-bottom: 3rem;
   opacity: 0;
   transform: translateY(30px);
@@ -101,13 +101,14 @@
 
 /* === PRODUCTS PREVIEW === */
 .products-preview {
-  background: linear-gradient(
-  315deg, /* opposite of 135deg */
-  #cd0909,
-  #f24e1e,
-  #f6a500,
-  #ffe8cc
+  background: linear-gradient(135deg, 
+  #302B31 0%, 
+  #625A67 33%, 
+  #DCD6D7 50%, 
+  #DF1024 100%
 );
+
+
 
   padding: 60px 20px;
   text-align: center;
@@ -121,7 +122,11 @@
 }
 
 .product-card {
-  background: linear-gradient(135deg, #cd0909, #f24e1e, #f6a500, #ffe8cc);
+  background: linear-gradient(135deg, 
+  #DF1024 30%,  
+  #625A67 66%, 
+  #302B31 100%
+);
 
   border: 1px solid #ddd;
   padding: 20px;
@@ -144,13 +149,13 @@
 }
 
 .product-card h3 {
-  color: #0077b6;
+  color: #DF1024 ;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .product-card p {
-  color: #555;
+  color: #DCD6D7 ;
   font-size: 0.95rem;
   line-height: 1.5;
 }

@@ -1,14 +1,12 @@
 body {
   font-family: "Arial Narrow", sans-serif;
-  background: linear-gradient(
-  135deg,
-  #b30000 0%,   /* Deep rich red */
-  #e63946 20%,  /* Warm sunset red */
-  #ff7b42 45%,  /* Orange glow */
-  #ffd166 70%,  /* Golden yellow */
-  #ffe5b4 85%,  /* Peach cream */
-  #fcefe6 100%  /* Soft warm white */
+  background: linear-gradient(135deg, 
+  #DF1024 0%, 
+  #DCD6D7 33%, 
+  #625A67 66%, 
+  #302B31 100%
 );
+
   color: #222;
   margin: 0;
   padding: 0;
@@ -32,10 +30,15 @@ body {
 
 /* 💥 Clean SINGLE version of card */
 .product-card {
-  background: linear-gradient(180deg, #cd0909, #f24e1e, #f6a500, #fff5e6);
-  border: 2px solid #f6f2f3;
+  background: linear-gradient(135deg, 
+  #DF1024 0%, 
+  #DCD6D7 33%, 
+  #625A67 66%, 
+  #302B31 100%
+);
+   border: 2px solid #DCD6D7; /* soft gray border */
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(48, 43, 49, 0.25); /* charcoal shadow */
   overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   animation: popIn 0.6s ease-out;
@@ -81,13 +84,13 @@ body {
 
 .card-body h3 {
   font-size: 1.25rem;
-  color: #00796b;
+  color:  #DF1024;
   margin-bottom: 10px;
 }
 
 .card-body p {
   font-size: 0.95rem;
-  color: #555;
+  color: #DCD6D7;
   margin-bottom: 20px;
 }
 
