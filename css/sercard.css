@@ -1,32 +1,35 @@
-
-/* === SERVICES PREVIEW === */
+/* ================================
+   === SERVICES PREVIEW SECTION ===
+================================ */
 .services-preview {
   text-align: center; /* Centers heading & button together */
 }
+
 .services-preview h2 {
   font-size: 2.2rem;
   font-weight: bold;
   color: #252522;
-  margin-bottom: 3rem;
+  margin: 0 0 3rem 2rem;
+  text-align: center;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 0.8s ease forwards;
-  margin-left: 2rem;
-  text-align: center;
 }
 
+/* --- Service Grid Layout --- */
 .service-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 5rem;
-  justify-items: center; /* Default: center items */
+  justify-items: center;
 }
 
 .service-card {
-  position: relative; /* Needed for text overlay positioning */
+  position: relative;
   display: inline-block;
   overflow: hidden;
   border-radius: 8px;
+  opacity: 0; /* Base hidden for animation */
 }
 
 .service-card img {
@@ -49,7 +52,7 @@
   left: 0;
   width: 100%;
   padding: 1.5rem;
-  color: white;
+  color: #fff;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   text-align: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -66,44 +69,16 @@
   line-height: 1.4;
 }
 
-/* Optional hover effect for text */
 .service-card:hover .service-card-content {
   transform: translateY(-5px);
 }
 
 
-/* Fade-up animation */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Grid */
-@media (max-width: 768px) {
-  .service-grid {
-    justify-items: end; /* Push items to the right */
-    margin-right: 1rem; /* Small gap from screen edge */
-  }
-}
-
-/* Larger screens - two columns, centered */
-@media (min-width: 900px) {
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
-}
-
-
-
-
-/* === PRODUCTS PREVIEW === */
+/* ================================
+   === PRODUCTS PREVIEW SECTION ===
+================================ */
 .products-preview {
   background: url("../assets/images/5.jpg") no-repeat center center / cover;
-
-
   padding: 60px 20px;
   text-align: center;
 }
@@ -117,17 +92,12 @@
 
 .product-card {
   background: #DCD6D7;
-
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  opacity: 0; /* Base hidden for animation */
 }
 
 .product-card img {
@@ -139,28 +109,21 @@
 }
 
 .product-card h3 {
-  color: #DF1024 ;
+  color: #DF1024;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .product-card p {
-  color: #625A67 ;
+  color: #625A67;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* Responsive Grid */
-@media (min-width: 600px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+
+/* ================================
+   === BUTTONS ===
+================================ */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -168,17 +131,26 @@
   font-weight: 600;
   text-decoration: none;
   border-radius: 50px;
-  transition: all 0.3s ease;
+  border: none;
   cursor: pointer;
   text-align: center;
-  border: none;
+  transition: all 0.3s ease;
 }
 
 
+/* ================================
+   === ANIMATIONS ===
+================================ */
 
-/* === Cool Animation Add-ons === */
+/* Fade-up animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* Subtle float-in for cards when they appear */
+/* Subtle float-in for cards */
 @keyframes floatUp {
   from {
     opacity: 0;
@@ -190,17 +162,12 @@
   }
 }
 
-/* Base state - hidden */
-.service-card, .product-card {
-  opacity: 0;
-}
-
-/* Triggered when in view */
+/* Animate when in view */
 .animate-in {
   animation: floatUp 0.8s ease forwards;
 }
 
-/* Stagger animation for grid items */
+/* Stagger animation delays */
 .service-grid .service-card:nth-child(1).animate-in { animation-delay: 0.2s; }
 .service-grid .service-card:nth-child(2).animate-in { animation-delay: 0.4s; }
 .service-grid .service-card:nth-child(3).animate-in { animation-delay: 0.6s; }
@@ -208,15 +175,16 @@
 .product-grid .product-card:nth-child(2).animate-in { animation-delay: 0.4s; }
 .product-grid .product-card:nth-child(3).animate-in { animation-delay: 0.6s; }
 
-/* Cool hover "lift & glow" effect */
-.service-card:hover, .product-card:hover {
+/* Shared hover effects */
+.service-card:hover,
+.product-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* Glow outline on hover */
-.service-card:hover::after, .product-card:hover::after {
+.service-card:hover::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -232,4 +200,37 @@
   0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
+}
+
+
+/* ================================
+   === RESPONSIVE BREAKPOINTS ===
+================================ */
+
+/* Tablet - services align right */
+@media (max-width: 768px) {
+  .service-grid {
+    justify-items: end;
+    margin-right: 1rem;
+  }
+}
+
+/* Larger screens - services in 2 cols */
+@media (min-width: 900px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+/* Products responsive grid */
+@media (min-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
