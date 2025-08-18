@@ -124,27 +124,10 @@
 .about-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: #252522;
   margin-bottom: 20px;
 }
 
-.about-content .btn.secondary {
-  display: inline-block;
-  padding: 10px 18px;
-  background: transparent;
-  border: 2px solid #0077b6;
-  color: #0077b6;
-  font-size: 0.95rem;
-  font-weight: 500;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.about-content .btn.secondary:hover {
-  background: #0077b6;
-  color: #fff;
-}
 
 /* 🚫 REMOVE MEDIA QUERIES — same layout everywhere */
 /* No mobile stacking */

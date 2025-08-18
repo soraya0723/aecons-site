@@ -1,11 +1,6 @@
 body {
   font-family: "Arial Narrow", sans-serif;
-  background: linear-gradient(135deg, 
-  #DF1024 0%, 
-  #DCD6D7 33%, 
-  #625A67 66%, 
-  #302B31 100%
-);
+  background: #DCD6D7;
 
   color: #222;
   margin: 0;
@@ -19,7 +14,7 @@ body {
   font-size: 2.75rem;
   margin-bottom: 50px;
   margin-top: 5rem;
-  color: #222;
+  color: #DF1024;
 }
 
 .product-grid {
@@ -30,13 +25,8 @@ body {
 
 /* 💥 Clean SINGLE version of card */
 .product-card {
-  background: linear-gradient(135deg, 
-  #DF1024 0%, 
-  #DCD6D7 33%, 
-  #625A67 66%, 
-  #302B31 100%
-);
-   border: 2px solid #DCD6D7; /* soft gray border */
+  background: #625A67;
+  border: 2px solid #625A67; /* soft gray border */
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(48, 43, 49, 0.25); /* charcoal shadow */
   overflow: hidden;
@@ -97,8 +87,8 @@ body {
 /* 🎯 Single source of button truth */
 .card-body .btn {
   padding: 10px 20px;
-  background-color: #00796b;
-  color: #fff;
+  background-color: #DF1024; /* strong red base */
+  color: #ffffff;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -106,7 +96,8 @@ body {
 }
 
 .card-body .btn:hover {
-  background-color: #004d40;
+  background-color: #302B31; /* deep charcoal on hover */
+  color: #ffffff; /* keep contrast clean */
 }
 
 /* 💫 POP-IN Animation */

@@ -101,13 +101,7 @@
 
 /* === PRODUCTS PREVIEW === */
 .products-preview {
-  background: linear-gradient(135deg, 
-  #302B31 0%, 
-  #625A67 33%, 
-  #DCD6D7 50%, 
-  #DF1024 100%
-);
-
+  background: url("../assets/images/5.jpg") no-repeat center center / cover;
 
 
   padding: 60px 20px;
@@ -122,11 +116,7 @@
 }
 
 .product-card {
-  background: linear-gradient(135deg, 
-  #DF1024 30%,  
-  #625A67 66%, 
-  #302B31 100%
-);
+  background: #DCD6D7;
 
   border: 1px solid #ddd;
   padding: 20px;
@@ -155,7 +145,7 @@
 }
 
 .product-card p {
-  color: #DCD6D7 ;
+  color: #625A67 ;
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -184,46 +174,8 @@
   border: none;
 }
 
-/* Primary Button - Always Centered & Shorter */
-.btn.primary {
-  background: transparent;
-  color: #0077b6;
-  box-shadow: 0 6px 15px rgba(0, 119, 182, 0.1);
-  display: inline-block;  /* Only as wide as content */
-  padding: 0.8rem 1.8rem; /* Space around text */
-  margin: 2rem auto;      /* Centers when using text-align center on parent */
-  font-weight: 600;
-  border-radius: 50px;    /* Rounded pill shape */
-}
-
-.btn.primary:hover {
-  background: #0077b6;
-  color: #fff;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
-}
 
 
-
-/* Secondary Button */
-.btn.secondary {
-  background: transparent;
-  color: #0077b6;
-  border: 2px solid #0077b6;
-  box-shadow: 0 6px 15px rgba(0, 119, 182, 0.1);
-}
-
-.btn.secondary:hover {
-  background: #0077b6;
-  color: #fff;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
-}
-
-/* Optional: Smooth "click" effect */
-.btn:active {
-  transform: translateY(-1px) scale(0.98);
-}
 /* === Cool Animation Add-ons === */
 
 /* Subtle float-in for cards when they appear */

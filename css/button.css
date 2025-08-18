@@ -4,8 +4,8 @@
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #867c74;  /* taupe primary */
+  color: #ffffff;             /* white text */
   border: none;
   border-radius: 6px;
   font-size: 1rem;
@@ -14,37 +14,43 @@
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(37, 37, 34, 0.25); /* charcoal shadow */
 }
 
 /* Hover + Focus */
 .btn:hover,
 .btn:focus-visible {
-  background-color: #0056b3;
+  background-color: #5d5852; /* gray-brown hover */
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 86, 179, 0.3);
+  box-shadow: 0 6px 18px rgba(37, 37, 34, 0.35);
+}
+
+/* Active (pressed) */
+.btn:active {
+  background-color: #ada198; /* beige press */
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(37, 37, 34, 0.25);
 }
 
 /* Accessibility: focus ring */
 .btn:focus-visible {
-  outline: 3px solid #cfe2ff;
+  outline: 3px solid #ada198; /* beige ring */
   outline-offset: 2px;
 }
 
 /* Secondary variant */
 .btn.secondary {
-  background-color: #6c757d;
-  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.2);
+  background-color: transparent;
+  border: 2px solid #252522;   /* charcoal border */
+  color: #252522;              /* charcoal text */
+  box-shadow: none;
 }
 
 .btn.secondary:hover,
 .btn.secondary:focus-visible {
-  background-color: #5a6268;
-  box-shadow: 0 6px 18px rgba(90, 98, 104, 0.3);
-}
-.centered-btn {
-  display: block;
-  margin: 3rem auto; /* adjust spacing as needed */
+  background-color: #867c74; /* taupe fill on hover */
+  color: #ffffff;
+  border-color: #867c74;
 }
 
 /* Small button variant */
@@ -54,8 +60,15 @@
   border-radius: 4px;
 }
 
+/* Centered utility */
+.centered-btn {
+  display: block;
+  margin: 3rem auto;
+}
 
-/* FILTER BUTTONS WRAPPER */
+/* ========================
+   Filter Buttons
+   ======================== */
 .filter-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -65,11 +78,10 @@
   padding: 1rem;
 }
 
-/* INDIVIDUAL FILTER BUTTON */
 .filter-buttons button {
-  background-color: #f0f0f0;
+  background-color: #ada198;     /* beige */
   border: 2px solid transparent;
-  color: #333;
+  color: #252522;                /* charcoal text */
   font-weight: 600;
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
@@ -80,31 +92,37 @@
   letter-spacing: 0.5px;
 }
 
-/* HOVER STATE */
+/* Hover */
 .filter-buttons button:hover {
-  background-color: #e0e0e0;
+  background-color: #867c74; /* taupe hover */
+  color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* ACTIVE STATE */
+/* Active (selected filter) */
 .filter-buttons button.active {
-  background-color: #111;
-  color: #fff;
-  border-color: #111;
-}
-/* Button Styles for a Different Design */
-.btn {
-  display: inline-block;
-  background-color: #007BFF;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  background-color: #252522; /* charcoal active */
+  color: #ffffff;
+  border-color: #252522;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+/* Secondary Button */
+.btn.secondary {
+  background:  #DF1024;
+  color: #ffffff; /* red text */
+  border: 2px solid #DF1024; /* red border */
+  box-shadow: 0 6px 15px rgba(223, 16, 36, 0.15); /* subtle red glow */
 }
 
+.btn.secondary:hover {
+  background: #DF1024; /* red fill */
+  color: #ffffff;      /* white text for contrast */
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(223, 16, 36, 0.35); /* stronger red glow */
+}
+
+/* Optional: Smooth "click" effect */
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
