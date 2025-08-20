@@ -47,81 +47,32 @@ if (form && status) {
 
 // 🔹 Gallery Filter
 const filterButtons = document.querySelectorAll('.filter-buttons button');
-const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryWrappers = document.querySelectorAll('.gallery-wrapper');
 
-if (filterButtons.length && galleryItems.length) {
+if (filterButtons.length && galleryWrappers.length) {
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
       const filter = btn.dataset.filter;
 
-      galleryItems.forEach(item => {
-        const category = item.dataset.category;
-        item.style.display = (filter === 'all' || category === filter) ? 'block' : 'none';
+      galleryWrappers.forEach(wrapper => {
+        const category = wrapper.dataset.category;
+        wrapper.style.display = (filter === 'all' || category === filter) 
+          ? 'block'
+          : 'none';
       });
     });
   });
 }
 
 
-// 🔹 Swiper Modal Logic
-const modal = document.getElementById('swiperModal');
-const closeModalBtn = document.getElementById('closeModal');
-const mainWrapper = modal?.querySelector('#swiperMainWrapper');
-const thumbWrapper = modal?.querySelector('#swiperThumbWrapper');
 
-let swiperMain, swiperThumbs;
 
-if (closeModalBtn && modal) {
-  closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    swiperMain?.destroy(true, true);
-    swiperThumbs?.destroy(true, true);
-  });
-}
-
-if (mainWrapper && thumbWrapper) {
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const images = JSON.parse(item.dataset.images || '[]');
-      if (!images.length) return;
-
-      mainWrapper.innerHTML = '';
-      thumbWrapper.innerHTML = '';
-
-      images.forEach(src => {
-        mainWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><img src="${src}" alt="Project Image"></div>`);
-        thumbWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><img src="${src}" alt="Thumbnail"></div>`);
-      });
-
-      modal.style.display = 'block';
-
-      swiperThumbs = new Swiper('.swiper-thumbs', {
-        spaceBetween: 10,
-        slidesPerView: 4,
-        watchSlidesProgress: true,
-      });
-
-      swiperMain = new Swiper('.swiper-main', {
-        spaceBetween: 10,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        thumbs: {
-          swiper: swiperThumbs,
-        },
-      });
-    });
-  });
-}
 document.addEventListener("contextmenu", (e) => {
   if (e.target.tagName === "IMG") {
     e.preventDefault();
   }
 });
+

@@ -41,7 +41,7 @@
   display: inline-block;
   padding: 8px 12px;
   text-decoration: none;
-  color: #252522; /* dark text for contrast */
+  color: #000000; /* dark text for contrast */
   font-weight: 500;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -51,24 +51,6 @@
 .nav-links li a:hover {
   transform: translateY(-5px) scale(1.05) rotateX(10deg);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* Gold Shine Animation */
-.nav-links li a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-  120deg,
-  rgba(134, 124, 116, 0.7) 0%, /* taupe metallic from #867c74 */
-  rgba(255, 255, 255, 0) 80%
-);
-
-
-  transform: skewX(-25deg);
 }
 
 .nav-links li a:hover::before {
