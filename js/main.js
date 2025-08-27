@@ -52,6 +52,7 @@ const galleryWrappers = document.querySelectorAll('.gallery-wrapper');
 if (filterButtons.length && galleryWrappers.length) {
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
+      // reset active state
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -59,13 +60,17 @@ if (filterButtons.length && galleryWrappers.length) {
 
       galleryWrappers.forEach(wrapper => {
         const category = wrapper.dataset.category;
-        wrapper.style.display = (filter === 'all' || category === filter) 
-          ? 'block'
-          : 'none';
+
+        if (filter === "all" || category === filter) {
+          wrapper.classList.remove("hidden"); // show
+        } else {
+          wrapper.classList.add("hidden"); // hide
+        }
       });
     });
   });
 }
+
 
 
 
