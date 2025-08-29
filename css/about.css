@@ -12,160 +12,128 @@ body {
   font-size: 1rem;
 }
 
-/* ========== CONTAINER & SECTION TITLE ========== */
-.container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 16px;
+/* ABOUT + TEAM PAGE STYLING */
+
+/* Section */
+.section {
+  padding: 6rem 2rem 4rem;
+  background: #ffffff;
 }
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 3px solid #867c74; /* taupe */
-  padding-bottom: 0.5rem;
-  letter-spacing: 1px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
   text-transform: uppercase;
-  color: #252522; /* charcoal */
+  color: #252522;
+  letter-spacing: 1px;
   text-align: center;
+  border-bottom: 3px solid #867c74;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.section-subtitle {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #252522;
 }
 
-/* ========== TYPOGRAPHY ========== */
+/* Typography */
 h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  color: #252522;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
   border-left: 4px solid #867c74;
   padding-left: 12px;
+  color: #252522;
 }
 p {
   margin-bottom: 1rem;
-  color: #5d5852; /* gray-brown */
+  color: #5d5852;
+  line-height: 1.7;
 }
 .highlight {
-  background-color: #f7f5f2; /* soft beige background */
+  background: #f7f5f2;
   border-left: 4px solid #867c74;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   font-style: italic;
   border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(134, 124, 116, 0.15); /* taupe shadow */
+  box-shadow: 0 4px 10px rgba(134,124,116,0.15);
 }
 
-/* ========== LISTS ========== */
+/* Lists */
 .styled-list {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
 }
 .styled-list li {
   margin-bottom: 0.75rem;
   padding-left: 24px;
   position: relative;
-  line-height: 1.6;
   color: #252522;
 }
 .styled-list li::before {
   content: "▹";
   position: absolute;
   left: 0;
-  color: #867c74; /* taupe accent */
+  color: #867c74;
   font-size: 1.2rem;
 }
 
-/* ========== TEAM SECTION ========== */
+/* Team Section */
 .team-section {
-  background-color: #f9f9f8; /* light beige-gray */
-  padding: 40px 16px;
+  background: #f9f9f8;
+  padding: 4rem 2rem;
 }
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
+.hierarchy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-left: 2px solid #d9d5cf;
+  padding-left: 20px;
 }
 .team-member {
-  background: #ffffff;
-  padding: 20px;
+  background: #fff;
+  padding: 16px 20px;
   border: 1px solid #e0dedb;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
 .team-member:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 22px rgba(37, 37, 34, 0.1);
+  background: #f7f5f2;
+  border-left: 4px solid #867c74;
+  transform: translateY(-4px);
 }
 .team-member h4 {
-  color: #867c74; /* taupe */
-  margin-bottom: 6px;
   font-size: 1.1rem;
+  color: #867c74;
+  margin-bottom: 4px;
 }
 .team-member p {
   font-size: 0.95rem;
   color: #5d5852;
 }
 
-/* ========== HIERARCHY LAYOUT ========== */
-.hierarchy-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-  border-left: 2px solid #d9d5cf;
-  padding-left: 20px;
+/* Hierarchy Levels */
+.level-1 { font-weight: bold; font-size: 1.15rem; color: #252522; }
+.level-2 { margin-left: 24px; }
+.level-3 { margin-left: 48px; }
+
+/* Download Section */
+.download-section {
+  text-align: center;
+  margin: 3rem 0;
 }
-.hierarchy .team-member {
-  position: relative;
-  padding-left: 20px;
+.download-section .btn {
+  background: #867c74;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
-.hierarchy .team-member::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 12px;
-  width: 12px;
-  height: 12px;
-  background-color: #867c74; /* taupe node */
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px #f7f5f2; /* beige halo */
+.download-section .btn:hover {
+  background: #5d5852;
+  transform: translateY(-2px);
 }
 
-/* ========== HIERARCHY LEVELS ========== */
-.level-1 {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #252522;
-}
-.level-2 {
-  margin-left: 24px;
-}
-.level-3 {
-  margin-left: 48px;
-}
-.hierarchy .team-member:hover {
-  background-color: #f7f5f2;
-  border-left: 4px solid #867c74;
-  border-radius: 6px;
-  transition: all 0.25s ease-in-out;
-}
-
-/* ========== RESPONSIVE UPGRADES ========== */
-@media (min-width: 600px) {
-  .section-title {
-    font-size: 2.2rem;
-  }
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 900px) {
-  .section-title {
-    font-size: 2.6rem;
-  }
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  h3 {
-    font-size: 1.6rem;
-  }
-}
