@@ -1,38 +1,45 @@
+body {
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+
 /* ==== Navbar Container ==== */
 .navbar {
-  background: rgba(255, 255, 255, 0.3); /* translucent black overlay */
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.2); /* subtle glass */
+  backdrop-filter: blur(6px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  border-bottom: 2px solid rgba(220, 214, 215, 0.3); /* soft gray accent */
 }
 
 .navbar.scrolled {
-  background: transparent; /* no fill color */
-  backdrop-filter: blur(4px); /* keep glass effect */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* optional shadow */
+  background: rgba(48, 43, 49, 0.9); /* charcoal on scroll */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
-
-
-
 
 /* ==== Inner Flex Layout ==== */
 .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row-reverse; /* 👈 This flips logo to the right */
+  flex-direction: row-reverse;
 }
 
 /* ==== Logo ==== */
 .logo img {
-  height: 60px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
 }
 
 /* ==== Nav Links ==== */
@@ -46,13 +53,23 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  color: #302B31; /* charcoal for clarity */
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-links li a:hover {
-  color: #0077ff;
+  color: #DF1024; /* vibrant red on hover */
+  border-bottom: 2px solid #DF1024;
+}
+
+.nav-links li a.active {
+  color: #DF1024;
+  border-bottom: 2px solid #DF1024;
 }
 
 /* ==== Responsive (Mobile) ==== */
@@ -65,7 +82,11 @@
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem 2rem;
+    gap: 1rem 1.5rem;
     margin-top: 1rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
   }
 }

@@ -1,3 +1,4 @@
+// ==================== HERO SWIPER ====================
 if (document.querySelector('.hero-swiper')) {
   new Swiper('.hero-swiper', {
     loop: true,
@@ -16,6 +17,8 @@ if (document.querySelector('.hero-swiper')) {
     },
   });
 }
+
+// ==================== DISABLE RIGHT-CLICK ON IMAGES ====================
 document.addEventListener("contextmenu", (e) => {
   if (e.target.tagName === "IMG") {
     e.preventDefault();
