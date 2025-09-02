@@ -7,27 +7,24 @@
   margin: 5rem auto; /* smaller top margin so it doesn’t sit too far under navbar */
 }
 
-.projects-section h2 {
+.projects h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;   /* slightly smaller for balance */
+  margin: 0 auto 2rem;
+  font-size: 8.5rem;
   font-weight: 700;
-  color: #111;
   letter-spacing: 1px;
   position: relative;
-  display: block;      /* show it again */
-  z-index: 2;          /* make sure it’s above background/overlays */
+  z-index: 2;
+
+  /* Background image behind the heading */
+  background: url("../assets/images/blueprints-compasses.jpg") center/cover no-repeat;
+  color: #252522; /* make text readable */
+  padding: 1.5rem 2rem;
+  border-radius: 100px; /* optional: soften the block */
+  display: inline-block; /* keeps it snug around the text */
+  width: 100%;
 }
 
-.projects-section h2::after {
-  content: "";
-  display: block;
-  width: 60px;         /* slightly slimmer underline */
-  height: 3px;
-  background: #333;
-  margin: 0.8rem auto 0;
-  border-radius: 2px;
-}
 /* =======================
    Filter Buttons
 ======================= */
