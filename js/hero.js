@@ -64,15 +64,21 @@ style.innerHTML = `
   }
 
   img {
-    -webkit-user-drag: none;
-    user-drag: none;
+    -webkit-user-drag: none; /* Chrome, Safari */
+    user-drag: none;         /* Draft spec */
     user-select: none;
+    -moz-user-select: none;  /* Firefox */
   }
 `;
 document.head.appendChild(style);
 
 // ==================== DISABLE RIGHT-CLICK ON IMAGES ====================
 document.addEventListener("contextmenu", e => {
+  if (e.target.tagName === "IMG") e.preventDefault();
+});
+
+// ==================== DISABLE IMAGE DRAGGING (Cross-Browser) ====================
+document.addEventListener("dragstart", e => {
   if (e.target.tagName === "IMG") e.preventDefault();
 });
 
@@ -86,13 +92,14 @@ document.addEventListener("keyup", e => {
 
     // Start jitter effect
     jitterInterval = setInterval(() => {
-      const x = Math.random() * 30 - 15; // -15px to +15px
+      const x = Math.random() * 30 - 15;
       const y = Math.random() * 30 - 15;
-      const rotate = Math.random() * 20 - 10; // -10deg to +10deg
-      watermarkOverlay.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${rotate}deg)`;
-    }, 50); // every 50ms
+      const rotate = Math.random() * 20 - 10;
+      watermarkOverlay.style.transform =
+        `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${rotate}deg)`;
+    }, 50);
 
-    // Stop after 0.8s
+    // Stop after 1s
     setTimeout(() => {
       blurOverlay.style.opacity = "0";
       watermarkOverlay.style.opacity = "0";
@@ -123,6 +130,7 @@ document.addEventListener("keydown", e => {
     alert("🚫 Dev Tools are disabled on this website.");
   }
 });
+
 
 
 
