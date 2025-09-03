@@ -4,39 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: 'Arial Narrow', Arial, sans-serif;
-  background-color: #ffffff;
-  color: #252522; /* charcoal */
-  line-height: 1.8;
-  font-size: 1rem;
-}
-
-/* ABOUT + TEAM PAGE STYLING */
-
-/* Section */
-.section {
-  padding: 6rem 2rem 4rem;
-  background: #ffffff;
-}
-.section-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  color: #252522;
-  letter-spacing: 1px;
-  text-align: center;
-  border-bottom: 3px solid #867c74;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-}
-.section-subtitle {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #252522;
-}
 
 /* Typography */
 h3 {

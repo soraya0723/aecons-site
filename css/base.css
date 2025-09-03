@@ -1,14 +1,91 @@
-/* RESET */
+/* ===========================
+   RESET
+=========================== */
 * {
-  margin: 0; padding: 0; box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* ===========================
+   BASE STYLES
+=========================== */
 body {
   font-family: "Arial Narrow", Arial, sans-serif;
-  min-width: 1400px;
-  color: #000000;
+  color: #111; /* main text */
   line-height: 1.6;
-  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
   overflow-x: hidden;
+}
+
+/* ===========================
+   UNIFIED SECTION HEADERS
+=========================== */
+.section-title {
+  text-align: center;
+  font-size: 2.8rem !important;        /* slightly smaller than 3rem for balance */
+  font-weight: 700;
+  margin-bottom: 0.75rem;   /* space before subtitle */
+  margin-top: 2rem;
+  color: #000;
+  letter-spacing: 0.5px;    /* subtle spacing for clarity */
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;    /* centered, with spacing below */
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Optional underline accent for headers */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #111;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===========================
+   RESPONSIVE HEADERS
+=========================== */
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.9rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+  }
 }
 
 /* Blurred gradient background */

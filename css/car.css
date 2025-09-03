@@ -1,21 +1,45 @@
-/* === CAREER SECTION === */
+/* ==============================
+   CAREER SECTION (Minimal + Title Uses Base.css)
+============================== */
 .section.career {
-  padding: 40px 20px;
+  position: relative;
+  padding: 20px 10px;
   background: url("../assets/images/viber_image_2025-08-13_09-06-08-970.jpg") center/cover no-repeat;
   text-align: center;
+  color: #fff; /* white text for contrast */
+  overflow: hidden;
 }
 
+/* Title */
 .section.career h2 {
-  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 40px;
-  color: #222;
+  color: #020202; /* force white so it pops */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Label Styling inside Career Section */
+.section.career label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222; /* darker text so it shows */
+  margin-bottom: 8px;
+  text-align: left; /* optional, if you don’t want center */
+}
+
+/* Job Listing Grid */
 .job-listing {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .job-card {
@@ -27,7 +51,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-
 .job-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -36,7 +59,6 @@
 .job-icon {
   margin-bottom: 20px;
 }
-
 .job-icon img {
   width: 50px;
   height: 50px;
@@ -47,14 +69,13 @@
   color: #333;
   margin-bottom: 10px;
 }
-
 .job-details p {
   font-size: 0.95rem;
   color: #666;
   line-height: 1.5;
 }
 
-/* Popping card special styles */
+/* Highlighted Job Card */
 .highlight-card {
   background: linear-gradient(to bottom, #ada198, #ffffff);
   border: 2px solid #f6f2f3;
@@ -69,5 +90,13 @@
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .job-card {
+    width: 100%;
+    max-width: 500px;
   }
 }
