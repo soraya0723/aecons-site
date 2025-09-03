@@ -1,11 +1,28 @@
-/* ========== RESET & BASE ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* ================== HEADINGS ================== */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #252522;
+  position: relative;
 }
 
-/* Typography */
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #867c74;
+  display: block;
+  margin-top: 8px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #5d5852;
+  margin-bottom: 2rem;
+}
+
 h3 {
   font-size: 1.5rem;
   margin: 2rem 0 1rem;
@@ -13,11 +30,13 @@ h3 {
   padding-left: 12px;
   color: #252522;
 }
+
+/* ================== PARAGRAPHS & HIGHLIGHTS ================== */
 p {
   margin-bottom: 1rem;
   color: #5d5852;
-  line-height: 1.7;
 }
+
 .highlight {
   background: #f7f5f2;
   border-left: 4px solid #867c74;
@@ -27,17 +46,19 @@ p {
   box-shadow: 0 4px 10px rgba(134,124,116,0.15);
 }
 
-/* Lists */
+/* ================== LISTS ================== */
 .styled-list {
   list-style: none;
   padding: 0;
 }
+
 .styled-list li {
   margin-bottom: 0.75rem;
   padding-left: 24px;
   position: relative;
   color: #252522;
 }
+
 .styled-list li::before {
   content: "▹";
   position: absolute;
@@ -46,11 +67,54 @@ p {
   font-size: 1.2rem;
 }
 
-/* Team Section */
+/* ================== ABOUT SECTION ================== */
+.about-section {
+  background: #ffffff;
+  padding: 5rem 0; /* top & bottom spacing */
+  padding-left: 5rem;
+}
+
+.about-wrapper {
+  display: flex;
+  gap: 5rem; /* keep no gap */
+  align-items: stretch;
+  width: 100%;
+  height: 80vh;
+  margin-top: 5rem;
+}
+
+/* Left Image */
+.about-image {
+  flex: 1;
+  margin-left: -11rem; /* remove container padding on left */
+}
+.about-image img {
+  width: 700px;
+  height: 500px;
+  border-radius: 0;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Right Content */
+.about-content {
+  flex: 1; /* equal width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+/* ================== TEAM SECTION ================== */
 .team-section {
   background: #f9f9f8;
   padding: 4rem 2rem;
 }
+
 .hierarchy-list {
   display: flex;
   flex-direction: column;
@@ -58,6 +122,7 @@ p {
   border-left: 2px solid #d9d5cf;
   padding-left: 20px;
 }
+
 .team-member {
   background: #fff;
   padding: 16px 20px;
@@ -65,16 +130,19 @@ p {
   border-radius: 8px;
   transition: all 0.25s ease;
 }
+
 .team-member:hover {
   background: #f7f5f2;
   border-left: 4px solid #867c74;
   transform: translateY(-4px);
 }
+
 .team-member h4 {
   font-size: 1.1rem;
   color: #867c74;
   margin-bottom: 4px;
 }
+
 .team-member p {
   font-size: 0.95rem;
   color: #5d5852;
@@ -85,11 +153,12 @@ p {
 .level-2 { margin-left: 24px; }
 .level-3 { margin-left: 48px; }
 
-/* Download Section */
+/* ================== DOWNLOAD SECTION ================== */
 .download-section {
   text-align: center;
   margin: 3rem 0;
 }
+
 .download-section .btn {
   background: #867c74;
   color: #fff;
@@ -98,9 +167,27 @@ p {
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
+
 .download-section .btn:hover {
   background: #5d5852;
   transform: translateY(-2px);
 }
 
+/* ================== RESPONSIVE ================== */
+@media (max-width: 900px) {
+  .about-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .about-content {
+    padding: 2rem;
+  }
+}

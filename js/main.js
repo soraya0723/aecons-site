@@ -70,14 +70,3 @@ if (filterButtons.length && galleryWrappers.length) {
     });
   });
 }
-
-
-
-
-
-document.addEventListener("contextmenu", (e) => {
-  if (e.target.tagName === "IMG") {
-    e.preventDefault();
-  }
-});
-

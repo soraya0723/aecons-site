@@ -99,3 +99,59 @@ body::before {
   transform: scale(1.05); /* avoid edge clipping */
   z-index: -1;
 }
+/* ===========================
+   STAGGERED SECTION ANIMATIONS
+=========================== */
+/* Target both: 
+   - any <section> or <main> with class .section
+   - plain <section> or <main> tags without the class
+*/
+.section,
+section,
+main {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible,
+section.visible,
+main.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   OVERLAY LOADER
+=========================== */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader img {
+  width: 120px; /* adjust logo size */
+  height: auto;
+  opacity: 0;
+  animation: fadeInLogo 1s ease forwards;
+}
+
+/* Smooth fade-out after hiding */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Logo subtle fade-in */
+@keyframes fadeInLogo {
+  to {
+    opacity: 1;
+  }
+}
+

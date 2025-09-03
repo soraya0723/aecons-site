@@ -23,17 +23,43 @@
 </head>
 
 <body>
+  <!-- Loader Overlay -->
+  <div id="loader">
+    <img src="assets/icon/viber_logo.svg" alt="Loading...">
+  </div>
 
-  <!-- About Section -->
-  <main class="section about">
+  <!-- ================= ABOUT US ================= -->
+  <section class="about-section">
     <div class="container">
-      <h2 class="section-title">About Us</h2>
+      <h2 class="section-title">About Us</h2> <!-- Move title here -->
+      <div class="about-wrapper">
+        
+        <!-- Left: Image -->
+        <div class="about-image">
+          <img src="assets/images/3.jpg" alt="Aecons Architecture Office">
+        </div>
 
-      <p class="highlight">
-        <strong>AECONS</strong> stands for <em>A</em>rchitecture, <em>E</em>ngineering, and <em>Cons</em>truction.
-        Founded in August 2018, this company was born from passion, faith, and a dream. We specialize in pre-design,
-        master planning, design-build, urban design, and general construction services — always site-sensitive and culturally aware.
-      </p>
+        <!-- Right: Content -->
+<div class="about-content">
+  <p class="highlight">
+    <strong>AECONS</strong> stands for <em>A</em>rchitecture, <em>E</em>ngineering, and <em>Cons</em>truction. Founded in August 2018, through the guidance of God and driven by passion, this company became a reality.
+  </p>
+
+  <p class="highlight">
+    The name was created to accentuate our profession and our dedication to serve, emphasizing the highest values of architecture, engineering, and construction. We specialize in Pre-Design, Regular Design, Master Planning, Design-Build, Urban Design, and Specialized Allied services for a wide range of projects and general construction across the country.
+  </p>
+
+  <p class="highlight">
+    Our design and construction approach is based on detailed assessment of the natural environment of each site and an understanding of the cultural heritage qualities of the location. We assist clients in making decisions that lead to innovative, practical, and site-responsive solutions.
+  </p>
+</div>
+
+
+      </div>
+    </div>
+
+
+
 
       <section>
         <h3>Firm History</h3>
@@ -83,44 +109,47 @@
         </ul>
       </section>
     </div>
-  </main>
+  </div>
+</section>
 
-  <!-- Team Hierarchy Section -->
-  <section class="team-section hierarchy">
-    <div class="container">
-      <h3 class="section-subtitle">Our People</h3>
-      <div class="hierarchy-list">
-        <div class="team-member level-1">
-          <h4>Arch. Daniel Talion</h4>
-          <p>Principal Architect</p>
-        </div>
 
-        <div class="team-member level-2">
-          <h4>Rachel Grace Sangco</h4>
-          <p>Head Administrator</p>
-        </div>
+<!-- ================= TEAM SECTION ================= -->
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title">Our People</h2>
+    <p class="section-subtitle">The minds shaping every project with precision and creativity.</p>
+    
+    <div class="hierarchy-list">
+      <div class="team-member level-1">
+        <h4>Arch. Daniel Talion</h4>
+        <p>Principal Architect</p>
+      </div>
 
-        <div class="team-member level-2">
-          <h4>Engr. John Michael C. Talion</h4>
-          <p>Head Engineer</p>
-        </div>
+      <div class="team-member level-2">
+        <h4>Rachel Grace Sangco</h4>
+        <p>Head Administrator</p>
+      </div>
 
-        
+      <div class="team-member level-2">
+        <h4>Engr. John Michael C. Talion</h4>
+        <p>Head Engineer</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Download Section -->
-  <section class="download-section">
-    <div class="container">
-      <a href="https://drive.google.com/uc?export=download&id=1wAJ-fwhbGRpR94vqpPMtakTm5AaqCpvy" 
-        class="btn"
-        target="_blank" 
-        rel="noopener noreferrer">
-        Download Company Profile
-      </a>
-    </div>
-  </section>
+<!-- ================= DOWNLOAD ================= -->
+<section class="download-section">
+  <div class="container">
+    <a href="https://drive.google.com/uc?export=download&id=1wAJ-fwhbGRpR94vqpPMtakTm5AaqCpvy" 
+       class="btn"
+       target="_blank"
+       rel="noopener noreferrer">
+       Download Company Profile
+    </a>
+  </div>
+</section>
+
 
   <!-- Footer (unchanged) -->
   <footer>
@@ -188,7 +217,9 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/mains.js" defer></script>
   <script src="js/nav.js" defer></script>
+
 </body>
 </html>
