@@ -90,6 +90,20 @@ document.addEventListener("keyup", e => {
     blurOverlay.style.opacity = "1";
     watermarkOverlay.style.opacity = "1";
 
+    // 🔹 Responsive blur strength
+    let blurStrength;
+    if (window.innerWidth >= 1600) {
+      blurStrength = 30; // large screens
+    } else if (window.innerWidth >= 1024) {
+      blurStrength = 20; // desktops
+    } else {
+      blurStrength = 15; // laptops/tablets
+    }
+
+    blurOverlay.style.backdropFilter = `blur(${blurStrength}px)`;
+    blurOverlay.style.webkitBackdropFilter = `blur(${blurStrength}px)`;
+    blurOverlay.style.background = "rgba(255, 255, 255, 0.5)";
+
     // Start jitter effect
     jitterInterval = setInterval(() => {
       const x = Math.random() * 30 - 15;
@@ -99,17 +113,19 @@ document.addEventListener("keyup", e => {
         `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${rotate}deg)`;
     }, 50);
 
-    // Stop after 1s
+    // Stop after 5s
     setTimeout(() => {
       blurOverlay.style.opacity = "0";
       watermarkOverlay.style.opacity = "0";
       clearInterval(jitterInterval);
       watermarkOverlay.style.transform = "translate(-50%, -50%) rotate(-30deg)";
-    }, 1000);
+    }, 5000);
 
     alert("🚫 Screenshots are not allowed.");
   }
 });
+
+
 
 // ==================== DISABLE CTRL+P (Print) ====================
 document.addEventListener("keydown", e => {
