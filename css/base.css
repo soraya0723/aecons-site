@@ -112,37 +112,4 @@ main.visible {
   transform: translateY(0);
 }
 
-/* ===========================
-   OVERLAY LOADER
-=========================== */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-#loader img {
-  width: 120px; /* adjust logo size */
-  height: auto;
-  opacity: 0;
-  animation: fadeInLogo 1s ease forwards;
-}
-
-/* Smooth fade-out after hiding */
-#loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Logo subtle fade-in */
-@keyframes fadeInLogo {
-  to {
-    opacity: 1;
-  }
-}
 

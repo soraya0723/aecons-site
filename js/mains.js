@@ -3,8 +3,11 @@ window.addEventListener("load", () => {
   // Handle loader only if it exists
   const loader = document.getElementById("loader");
   if (loader) {
-    loader.classList.add("hidden");
-    console.log("✅ Loader hidden");
+    // Wait 2s before hiding loader
+    setTimeout(() => {
+      loader.classList.add("hidden");
+      console.log("✅ Loader hidden after delay");
+    }, 2000); // 2000ms = 2s
   } else {
     console.log("ℹ️ No loader found, skipping...");
   }
