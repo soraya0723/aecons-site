@@ -2,7 +2,13 @@
    ABOUT SECTION
 ========================= */
 .about {
-  padding: 3rem 1rem;
+  padding: 3rem 5px;
+  
+}
+
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about .section-title {
@@ -24,21 +30,34 @@
   transform: translateX(-50%);
 }
 
-/* ROWS */
+/* === GRID ROWS === */
 .about-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 2fr;  /* 2 equal columns */
+  gap: 2rem;
+  margin-bottom: 5rem; /* increased spacing for smoother scroll */
   align-items: center;
-  gap: 3rem;
-  margin-bottom: 5px;
-}
-.about-row.reverse {
-  flex-direction: row-reverse;
+
+  /* Fade animation default */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
 }
 
-/* TEXT */
-.about-text {
-  flex: 1;
+.about-row.show {
+  opacity: 1;
+  transform: translateY(0);
 }
+
+/* Reverse order for alternating layout */
+.about-row.reverse .about-text {
+  order: 2;
+}
+.about-row.reverse .about-img {
+  order: 1;
+}
+
+/* === TEXT === */
 .about-text h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
@@ -53,40 +72,26 @@
   color: #555;
 }
 
-/* IMAGE */
-.about-img {
-  flex: 1;
-}
+/* === IMAGES === */
 .about-img img {
   width: 800px;
-  height: 700px;
-  border-radius: 1px;
+  max-height: 500px;
+  border-radius: 4px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   object-fit: cover;
 }
 
-/* RESPONSIVE */
+/* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .about-row,
-  .about-row.reverse {
-    flex-direction: column;
+  .about-row {
+    grid-template-columns: 1fr; /* stack */
     text-align: center;
+  }
+  .about-row.reverse .about-text,
+  .about-row.reverse .about-img {
+    order: unset; /* reset stacking order */
   }
   .about-text {
     text-align: left;
   }
-}
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-/* Only add .reveal if you want animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
 }

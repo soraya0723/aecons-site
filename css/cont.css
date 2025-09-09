@@ -1,6 +1,3 @@
-/* ==============================
-   CONTACT SECTION (Architect Theme - Clean)
-============================== */
 .contact-section {
   position: relative;
   padding: 3rem 2rem;
@@ -17,47 +14,54 @@
   content: "";
   position: absolute;
   inset: 0;
-
   backdrop-filter: brightness(0.9);
   z-index: 0;
 }
 
-/* Header wrapper (keeps spacing only) */
-.contact-header {
-  text-align: center;
-  margin-bottom: 60px;
+/* Header */
+.section-title,
+.section-subtitle {
   position: relative;
   z-index: 1;
 }
 
-/* Layout container */
+/* Layout */
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  width: 100%;
-  max-width: 1200px;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin: 20px auto 0;
+  justify-items: center;
   position: relative;
   z-index: 1;
 }
 
-/* Frosted Contact Card */
+/* Card styles + hidden state */
 .contact-card {
+  width: 100%;
+  max-width: 550px;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-  transition: all 0.35s ease;
+  margin-bottom: 5rem;
+
+  
 }
+
+
+
+/* Hover */
 .contact-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 35px rgba(0,0,0,0.2);
 }
 
+/* Typography */
 .contact-card h3 {
   font-size: 1.4rem;
-  color: #867c74; /* taupe accent */
+  color: #867c74;
   margin: 25px 0 10px;
   border-left: 4px solid #867c74;
   padding-left: 10px;
@@ -77,36 +81,6 @@
 .contact-card a:hover {
   color: #252522;
   text-decoration: underline;
-}
-
-/* Map Box */
-.map-wrapper {
-  width: 100%;
-  margin-top: 0;
-  overflow: hidden;
-}
-.map-wrapper iframe {
-  width: 100%;
-  min-height: 500px;
-  height: 70vh;
-  border: none;
-  display: block;
-}
-
-.map-link {
-  display: inline-block;
-  background-color: #867c74;
-  color: #ffffff;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.map-link:hover {
-  background-color: #5d5852;
-  transform: translateY(-3px);
 }
 
 /* Responsive */

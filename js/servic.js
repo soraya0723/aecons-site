@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll(".service-row");
+  const rows = document.querySelectorAll(".about-row, .service-row");
 
   const observer = new IntersectionObserver(
     entries => {
