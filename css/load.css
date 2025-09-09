@@ -1,3 +1,4 @@
+/* ================== LOADER ================== */
 #loader {
   position: fixed;
   top: 0;
@@ -10,7 +11,7 @@
   justify-content: center;
   z-index: 9999;
 
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 #loader.hidden {
@@ -19,6 +20,24 @@
 }
 
 #loader img {
-  width: 100px;
+  width: 800px;
+  height: 500px;
   animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+}
+
+/* ================== SCROLL REVEAL ================== */
+section, main {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible, main.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -1,15 +1,13 @@
-// 🔹 Loader overlay + Scroll reveal
+// Loader overlay + Scroll reveal
 window.addEventListener("load", () => {
-  // Handle loader only if it exists
   const loader = document.getElementById("loader");
+
   if (loader) {
-    // Wait 2s before hiding loader
+    // Keep loader for 2s before hiding
     setTimeout(() => {
       loader.classList.add("hidden");
-      console.log("✅ Loader hidden after delay");
-    }, 2000); // 2000ms = 2s
-  } else {
-    console.log("ℹ️ No loader found, skipping...");
+      console.log("✅ Loader hidden with animation");
+    }, 2000);
   }
 
   // Grab all sections
@@ -17,19 +15,20 @@ window.addEventListener("load", () => {
 
   const revealOnScroll = () => {
     sections.forEach((sec, i) => {
-      if (!sec.classList.contains("visible")) { // prevent re-trigger
+      if (!sec.classList.contains("visible")) {
         const rect = sec.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
+          // Add staggered animation
           setTimeout(() => {
             sec.classList.add("visible");
             console.log("✨ Revealed section:", i);
-          }, i * 200); // stagger effect
+          }, i * 200);
         }
       }
     });
   };
 
-  // Run on scroll and on load
+  // Run on scroll and load
   window.addEventListener("scroll", revealOnScroll, { passive: true });
-  revealOnScroll(); // reveal hero section immediately
+  revealOnScroll();
 });
