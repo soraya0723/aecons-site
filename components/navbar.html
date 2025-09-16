@@ -1,11 +1,18 @@
 <nav class="navbar">
   <div class="nav-inner">
+    <!-- Logo -->
     <div class="logo">
-      <a href="index.html">
-        <img src="assets/icon/viber_logo.svg" alt="Aecons Logo" class="logo-img" />
-      </a>
+      <img src="assets/icon/viber_logo.svg" alt="Logo">
     </div>
 
+    <!-- Hamburger (3 bars) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav Links (menu items) -->
     <ul class="nav-links" id="nav-menu">
   <li><a href="index.html">Home</a></li>
   <li><a href="about.html">About</a></li>
@@ -16,7 +23,20 @@
   <li><a href="products.html">Products</a></li>
   
 </ul>
-
-
   </div>
 </nav>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-menu"); // <-- match your UL id
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    hamburger.classList.toggle("active");
+    console.log("hamburger clicked → classes:", navLinks.className, hamburger.className);
+  });
+</script>
+
+
+
+
