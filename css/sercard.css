@@ -1,15 +1,15 @@
 /* ================================
-   === SERVICES PREVIEW SECTION ===
+   SERVICES PREVIEW SECTION
 ================================ */
 .services-preview {
-  text-align: center; /* Centers heading & button together */
+  text-align: center;
 }
 
 .services-preview h2 {
   font-size: 2.2rem;
   font-weight: bold;
   color: #252522;
-  margin: 0 0 3rem 2rem;
+  margin: 0 0 3rem 0;
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -19,23 +19,23 @@
 /* --- Service Grid Layout --- */
 .service-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
   justify-items: center;
 }
 
 .service-card {
   position: relative;
-  display: inline-block;
   overflow: hidden;
   border-radius: 8px;
-  opacity: 0; /* Base hidden for animation */
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .service-card img {
-  display: block;
-  width: 600px;
-  height: 600px;
+  width: 550px;
+  height: 500px;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.4s ease, filter 0.4s ease;
@@ -43,7 +43,7 @@
 
 .service-card:hover img {
   transform: scale(1.05);
-  filter: brightness(0.8); /* Slight darken to make text pop */
+  filter: brightness(0.8);
 }
 
 .service-card-content {
@@ -51,7 +51,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   color: #fff;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   text-align: center;
@@ -62,6 +62,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  left: 9rem;
 }
 
 .service-card p {
@@ -73,9 +74,8 @@
   transform: translateY(-5px);
 }
 
-
 /* ================================
-   === PRODUCTS PREVIEW SECTION ===
+   PRODUCTS PREVIEW SECTION
 ================================ */
 .products-preview {
   background: url("../assets/images/5.jpg") no-repeat center center / cover;
@@ -85,25 +85,26 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .product-card {
-  background: none;   /* ❌ remove card background */
-  border: none;       /* ❌ remove border */
-  padding: 0;         /* ❌ remove padding */
-  border-radius: 0;   /* ❌ remove rounded corners */
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
   text-align: center;
-  opacity: 0;         /* if you’re using fade-in animation */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .product-card img {
   width: 100%;
   max-height: 180px;
-  object-fit: contain; /* ✅ so logo/product isn’t cropped */
+  object-fit: contain;
   margin-bottom: 1rem;
 }
 
@@ -114,15 +115,13 @@
 }
 
 .product-card p {
-  color: #ffffff;
+  color: #fff;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-
-
 /* ================================
-   === BUTTONS ===
+   BUTTONS
 ================================ */
 .btn {
   display: inline-block;
@@ -137,32 +136,18 @@
   transition: all 0.3s ease;
 }
 
-
 /* ================================
-   === ANIMATIONS ===
+   ANIMATIONS
 ================================ */
-
-/* Fade-up animation */
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Subtle float-in for cards */
 @keyframes floatUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Animate when in view */
 .animate-in {
   animation: floatUp 0.8s ease forwards;
 }
@@ -176,15 +161,13 @@
 .product-grid .product-card:nth-child(3).animate-in { animation-delay: 0.6s; }
 
 /* Shared hover effects */
-.service-card:hover,
-.product-card:hover {
+.service-card:hover, .product-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* Glow outline on hover */
-.service-card:hover::after {
+.service-card::after, .product-card::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -192,111 +175,9 @@
   box-shadow: 0 0 20px rgba(131, 178, 65, 0.4);
   pointer-events: none;
   opacity: 0;
-  animation: glowPulse 0.6s forwards;
+  transition: opacity 0.3s ease;
 }
 
-/* Glow pulse animation */
-@keyframes glowPulse {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+.service-card:hover::after, .product-card:hover::after {
+  opacity: 1;
 }
-
-/* ================================
-   RESPONSIVE SERVICES & PRODUCTS
-================================ */
-
-/* Tablet (≤ 1024px) */
-@media (max-width: 1024px) {
-  /* Services */
-  .services-preview h2 {
-    font-size: 1.8rem;
-    margin: 0 0 2rem;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr 1fr; /* 2 cards side by side */
-    gap: 3rem;
-  }
-
-  .service-card img {
-    width: 100%;
-    height: 400px;
-  }
-
-  .service-card h3 {
-    font-size: 1.3rem;
-  }
-  .service-card p {
-    font-size: 0.95rem;
-  }
-
-  /* Products */
-  .products-preview {
-    padding: 40px 15px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 products */
-    gap: 1.5rem;
-  }
-
-  .product-card img {
-    max-height: 150px;
-  }
-  .product-card h3 {
-    font-size: 1rem;
-  }
-  .product-card p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Mobile (≤ 600px) */
-@media (max-width: 600px) {
-  /* Services */
-  .services-preview h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr; /* stack vertically */
-    gap: 2rem;
-  }
-
-  .service-card img {
-    height: 280px;
-  }
-
-  .service-card h3 {
-    font-size: 1.1rem;
-  }
-  .service-card p {
-    font-size: 0.85rem;
-  }
-
-  /* Products */
-  .products-preview {
-    padding: 30px 10px;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr; /* single column */
-    gap: 1rem;
-  }
-
-  .product-card img {
-    max-height: 120px;
-  }
-
-  .product-card h3 {
-    font-size: 0.95rem;
-  }
-  .product-card p {
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-}
-
-
