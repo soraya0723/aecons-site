@@ -63,6 +63,70 @@
 
 
 
+/* ================================
+   RESPONSIVE SECTION & HERO SWIPER
+================================ */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .section {
+    padding: 20px;
+    margin-top: 4rem;
+  }
+
+  .section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-swiper {
+    margin-top: 70px; /* adjust slightly smaller */
+  }
+
+  .slide-text {
+    font-size: 1.6rem;
+    bottom: 15%;
+    left: 8%;
+  }
+
+  .slide-text small {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .section {
+    padding: 15px 10px;
+    margin-top: 3rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-swiper {
+    margin-top: 60px; /* tighter spacing */
+  }
+
+  .swiper-slide img {
+    max-height: 300px; /* prevent overly tall images */
+    object-fit: cover; /* better crop on small screens */
+  }
+
+  .slide-text {
+    font-size: 1.1rem;
+    bottom: 12%;
+    left: 5%;
+    text-align: left;
+    max-width: 80%; /* prevent overflow */
+  }
+
+  .slide-text small {
+    font-size: 0.75rem;
+  }
+}
 
 
 

@@ -138,3 +138,85 @@ footer {
     text-align: center;
   }
 }
+
+/* =========================
+   RESPONSIVE FOOTER
+========================= */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  /* ✅ stack sections vertically */
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    min-width: unset; /* let them shrink naturally */
+    width: 100%;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-right {
+    flex-wrap: wrap;        /* allow wrapping */
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-left h3 {
+    font-size: 1.3rem;
+  }
+  .footer-quote {
+    font-size: 0.95rem;
+  }
+  .footer-center h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  footer {
+    padding: 30px 15px;
+  }
+
+  .footer-left h3 {
+    font-size: 1.1rem;
+  }
+  .footer-quote {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .footer-center h4 {
+    font-size: 1rem;
+  }
+
+  .circle-icon {
+    width: 45px;
+    height: 45px;
+  }
+  .circle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-right {
+    gap: 10px;
+  }
+  .footer-right img {
+    max-width: 70px;
+    min-width: 40px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+}
