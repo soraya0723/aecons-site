@@ -90,3 +90,38 @@ body {
     font-size: 0.95rem;
   }
 }
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .nav-inner {
+    padding: 0 30px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* show hamburger */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: none; /* hidden by default */
+    z-index: 2000; /* 🚀 force it above navbar */
+  }
+
+  .nav-links.show {
+    display: flex !important; /* ensure visible */
+  }
+}

@@ -203,34 +203,4 @@
 }
 
 
-/* ================================
-   === RESPONSIVE BREAKPOINTS ===
-================================ */
 
-/* Tablet - services align right */
-@media (max-width: 768px) {
-  .service-grid {
-    justify-items: end;
-    margin-right: 1rem;
-  }
-}
-
-/* Larger screens - services in 2 cols */
-@media (min-width: 900px) {
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
-}
-
-/* Products responsive grid */
-@media (min-width: 600px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
