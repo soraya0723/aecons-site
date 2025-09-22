@@ -83,10 +83,12 @@
 .gallery-two .big {
   grid-column: 1 / -1;
   grid-row: span 2;
+  
 }
 .gallery-two .small {
   grid-column: span 1;
   height: 450px;
+  background-color: #000;
 }
 
 /* ===== Gallery Three ===== */
@@ -226,41 +228,64 @@
   }
 }
 
-/* Mobile (≤ 600px) */
-@media (max-width: 600px) {
-  .filter-buttons {
-    gap: 0.5rem;
-  }
-  .filter-btn {
-    font-size: 0.8rem;
-    padding: 0.45rem 0.9rem;
-    border-radius: 20px;
-  }
-
-  /* Stack all galleries into 1 column */
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
   .gallery-one,
   .gallery-two,
   .gallery-three,
   .gallery-four {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 180px;
+    display: grid;
+    grid-template-columns: 1fr;   /* single column */
+    grid-auto-rows: auto;         /* let height follow image ratio */
+                       
   }
 
+  /* Make big items full width instead of trying to span rows/cols */
   .gallery-one .big,
   .gallery-two .big,
   .gallery-four .big {
     grid-column: span 1;
     grid-row: span 1;
   }
-
-  .gallery-wrapper h4 {
-    font-size: 1.5rem;
+/* Override only for small items in .gallery-two */
+  .gallery-two .small {
+    height: auto;                 /* let height follow image */
+    background-color: transparent;/* no black box if image doesn’t fill */
   }
 
-  .overlay h3 {
-    font-size: 0.9rem;
-  }
-  .overlay p {
-    font-size: 0.75rem;
+  .gallery-two .small img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;            /* consistent crop if needed */
+    border-radius: 6px;
   }
 }
+  /* Section titles */
+  .gallery-wrapper h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    text-align: center; /* looks better on small screens */
+  }
+
+  /* Overlay text */
+  .overlay h3 {
+    font-size: 1rem;
+  }
+  .overlay p {
+    font-size: 0.85rem;
+  }
+
+  /* Images */
+  .gallery-item img {
+    width: 100%;
+    height: auto; /* keep proportions */
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  /* Wrapper spacing */
+  .gallery-wrapper {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
