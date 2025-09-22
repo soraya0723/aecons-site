@@ -2,11 +2,9 @@
   position: relative;
   padding: 3rem 2rem;
   background: url("../assets/images/viber_image_2025-08-13_09-06-08-970.jpg") center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: #252522; /* charcoal */
   overflow: hidden;
+  z-index: 0;
 }
 
 /* Subtle overlay for readability */
@@ -14,6 +12,7 @@
   content: "";
   position: absolute;
   inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* soft overlay */
   backdrop-filter: brightness(0.9);
   z-index: 0;
 }
@@ -23,81 +22,115 @@
 .section-subtitle {
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
-/* Layout */
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  margin: 20px auto 0;
-  justify-items: center;
+/* Main layout: Left (text) + Right (map) */
+.contact-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
   position: relative;
   z-index: 1;
 }
 
-/* Card styles + hidden state */
-.contact-card {
+.contact-left {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;   /* vertical centering */
+  align-items: flex-start;   /* align text left */
+}
+
+.contact-right {
+  flex: 1 1 400px;
+}
+
+/* Map wrapper */
+.map-wrapper {
   width: 100%;
-  max-width: 550px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-  margin-bottom: 5rem;
-
-  
+  height: 500px; /* fixed height for more visibility */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-
-
-/* Hover */
-.contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+.map-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-/* Typography */
-.contact-card h3 {
-  font-size: 1.4rem;
-  color: #867c74;
-  margin: 25px 0 10px;
-  border-left: 4px solid #867c74;
-  padding-left: 10px;
+/* Plain text (no card) */
+.contact-left {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;   /* vertical center */
+  align-items: center;       /* horizontal center */
+  text-align: center;        /* center the text itself */
 }
-.contact-card p {
-  font-size: 1.1rem;
+
+.contact-info {
   color: #252522;
-  margin-bottom: 16px;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px; /* keeps text nicely contained */
 }
-.contact-card a {
+
+.contact-info h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #867c74;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
   color: #867c74;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
-.contact-card a:hover {
+
+.contact-info a:hover {
+  color: #252522;
+  text-decoration: underline;
+}
+
+
+.contact-info a:hover {
   color: #252522;
   text-decoration: underline;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex: 1 1 100%;
+  }
+
+  .map-wrapper {
+    height: 400px;
   }
 }
+
 @media (max-width: 600px) {
   .contact-section {
     padding: 60px 6%;
   }
-  .contact-card {
-    padding: 30px 20px;
-  }
 }
+
 
 /* =========================
    RESPONSIVE CONTACT
