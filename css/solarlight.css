@@ -535,7 +535,7 @@ body {
 }
 
 .product-gallery {
-  width: 100%;
+  width: 320px;
   text-align: center;
 }
 .product-gallery img {
