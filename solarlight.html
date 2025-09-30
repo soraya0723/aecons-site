@@ -43,7 +43,12 @@
 
   <!-- MAIN PRODUCT PAGE -->
 <main class="products-layout">
-  
+
+  <!-- Sidebar Toggle Button (mobile/tablet only) -->
+  <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active')">
+    ☰ Categories
+  </button>
+
   <!-- Sidebar -->
   <aside class="sidebar">
     <ul>
@@ -61,119 +66,117 @@
   </aside>
 
   <!-- Product Highlight -->
-<section class="product-highlight">
-  <div class="container product-layout">
-    
-    <!-- Left: Swiper -->
-    <div class="product-gallery">
-      <!-- Swiper Main -->
-      <div class="swiper-main">
-        <div id="swiperMainWrapper" class="swiper-wrapper">
-          
-          <div class="swiper-slide"><img src="assets/products/GoodWe/XS-G3-33 L.png" alt=""></div>
-          <div class="swiper-slide"><img src="assets/products/GoodWe/XS-G3-31 M.png" alt=""></div>
-          <div class="swiper-slide"><img src="assets/products/GoodWe/XS-G3-32 R.png" alt=""></div>
+  <section class="product-highlight">
+    <div class="container product-layout">
+
+      <!-- Left: Swiper -->
+      <div class="product-gallery">
+        <div class="swiper-main">
+          <div id="swiperMainWrapper" class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/products/GoodWe/XS-G3-33 L.png" alt=""></div>
+            <div class="swiper-slide"><img src="assets/products/GoodWe/XS-G3-31 M.png" alt=""></div>
+            <div class="swiper-slide"><img src="assets/products/GoodWe/XS-G3-32 R.png" alt=""></div>
+          </div>
         </div>
       </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info">
+        <h2>GoodWe XS G3 Series Solar Inverter</h2>
+        <p>
+          Ultra-compact residential solar inverter designed for maximum 
+          <strong>efficiency, safety, and smart control</strong>.
+        </p>
+        <ul class="product-specs">
+          <li>⚡ Lightweight: only 4.6kg (A4 paper size)</li>
+          <li>⚡ 200% DC input oversizing</li>
+          <li>⚡ 97.6% max efficiency</li>
+          <li>⚡ &lt;20dB fanless quiet operation</li>
+          <li>⚡ IP66 ingress protection</li>
+        </ul>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Right: Product Info --> 
-<div class="product-info">
-  <h2>GoodWe XS G3 Series Solar Inverter</h2>
-  <p>
-    Ultra-compact residential solar inverter designed for maximum 
-    <strong>efficiency, safety, and smart control</strong>.
-  </p>
-  <ul class="product-specs">
-    <li>⚡ Lightweight: only 4.6kg (A4 paper size)</li>
-    <li>⚡ 200% DC input oversizing</li>
-    <li>⚡ 97.6% max efficiency</li>
-    <li>⚡ &lt;20dB fanless quiet operation</li>
-    <li>⚡ IP66 ingress protection</li>
-  </ul>
-</div>
-</div>
+  <!-- 🌟 Features Section -->
+  <section class="features">
+    <h2 class="section-title">Key Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Superb Safety & Reliability</h3>
+        <p>With optional <strong>AFCI</strong>, the inverter detects arc fault failures, sends alarms, and automatically breaks the circuit.</p>
+        <ul>
+          <li>Optional AFCI</li>
+          <li>Optional Type II SPD (DC & AC sides)</li>
+        </ul>
+      </div>
 
+      <div class="feature-card">
+        <h3>Smart Control & Monitoring</h3>
+        <p>Intelligent energy management with <strong>24/7 load consumption monitoring</strong> via GoodWe’s smart meter.</p>
+        <ul>
+          <li>Export power limit</li>
+          <li>24/7 load consumption monitoring</li>
+        </ul>
+      </div>
 
-<!-- 🌟 Features Section -->
-<section class="features">
-  <h2 class="section-title">Key Features</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>Superb Safety & Reliability</h3>
-      <p>With optional <strong>AFCI</strong>, the inverter detects arc fault failures, sends alarms, and automatically breaks the circuit.</p>
-      <ul>
-        <li>Optional AFCI</li>
-        <li>Optional Type II SPD (DC & AC sides)</li>
-      </ul>
+      <div class="feature-card">
+        <h3>Optimal Generation</h3>
+        <p>With <strong>16A per string input current</strong> and 200% oversizing capacity, the XS G3 maximizes solar capture.</p>
+        <ul>
+          <li>16A input current per string</li>
+          <li>200% DC input oversizing</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <div class="feature-card">
-      <h3>Smart Control & Monitoring</h3>
-      <p>Intelligent energy management with <strong>24/7 load consumption monitoring</strong> via GoodWe’s smart meter.</p>
-      <ul>
-        <li>Export power limit</li>
-        <li>24/7 load consumption monitoring</li>
-      </ul>
+  <!-- 📊 Datasheet Section -->
+  <section class="datasheet">
+    <h2 class="section-title">Datasheet</h2>
+    <div class="table-wrapper">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Specification</th>
+            <th>GW1500-XS-30</th>
+            <th>GW3000-XS-30</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Max. Input Voltage (V)</th>
+            <td>600</td>
+            <td>600</td>
+          </tr>
+          <tr>
+            <th>Max. Input Current per MPPT (A)</th>
+            <td>16</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <th>MPP Trackers / Strings</th>
+            <td>1 / 1</td>
+            <td>1 / 1</td>
+          </tr>
+          <tr>
+            <th>Weight (kg)</th>
+            <td>4.6</td>
+            <td>4.6</td>
+          </tr>
+          <tr>
+            <th>Nominal Output Voltage (V)</th>
+            <td>220 / 230 / 240, L / N / PE</td>
+            <td>220 / 230 / 240, L / N / PE</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-    <div class="feature-card">
-      <h3>Optimal Generation</h3>
-      <p>With <strong>16A per string input current</strong> and 200% oversizing capacity, the XS G3 maximizes solar capture.</p>
-      <ul>
-        <li>16A input current per string</li>
-        <li>200% DC input oversizing</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 📊 Datasheet Section -->
-<section class="datasheet">
-  <h2 class="section-title">Datasheet</h2>
-  <div class="table-wrapper">
-    <table class="styled-table">
-      <thead>
-        <tr>
-          <th>Specification</th>
-          <th>GW1500-XS-30</th>
-          <th>GW3000-XS-30</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Max. Input Voltage (V)</th>
-          <td>600</td>
-          <td>600</td>
-        </tr>
-        <tr>
-          <th>Max. Input Current per MPPT (A)</th>
-          <td>16</td>
-          <td>16</td>
-        </tr>
-        <tr>
-          <th>MPP Trackers / Strings</th>
-          <td>1 / 1</td>
-          <td>1 / 1</td>
-        </tr>
-        <tr>
-          <th>Weight (kg)</th>
-          <td>4.6</td>
-          <td>4.6</td>
-        </tr>
-        <tr>
-          <th>Nominal Output Voltage (V)</th>
-          <td>220 / 230 / 240, L / N / PE</td>
-          <td>220 / 230 / 240, L / N / PE</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-
+  </section>
 
 </main>
+
 
 <!-- Swiper Modal -->
 <div id="swiperModal" style="display: none">

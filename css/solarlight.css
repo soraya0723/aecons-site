@@ -473,6 +473,39 @@ body {
   background: #f9f9f9;
 }
 
+/* Sidebar toggle button */
+.sidebar-toggle {
+  display: none; /* hidden by default */
+  background: #DF1024;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: background 0.3s ease;
+}
+.sidebar-toggle:hover {
+  background: #b90d1d;
+}
+
+/* Mobile/Tablet Sidebar */
+.sidebar {
+  display: none; /* hidden by default */
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.sidebar.active {
+  display: block;
+}
+
+/* Show toggle on mobile/tablet */
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    display: inline-block;
+  }
+}
 
 
 /* ===== Scroll Animation ===== */
@@ -494,6 +527,13 @@ body {
   gap: 1.5rem;
 }
 
+/* Product Layout (gallery + info inside) */
+.product-layout {
+  display: flex;
+  flex-direction: column; /* stacked by default */
+  gap: 1.5rem;
+}
+
 .product-gallery {
   width: 100%;
   text-align: center;
@@ -505,7 +545,6 @@ body {
   object-fit: contain;
 }
 
-/* Product Info */
 .product-info {
   text-align: left;
 }
@@ -552,14 +591,15 @@ body {
    Tablets ≥ 768px
    ======================== */
 @media (min-width: 768px) {
-  .products-layout {
-    flex-direction: row;
+  .product-layout {
+    flex-direction: row; /* gallery + info side by side */
     align-items: flex-start;
     gap: 2rem;
   }
 
   .product-gallery {
     flex: 1 1 50%;
+    max-width: 500px;
   }
   .product-info {
     flex: 1 1 50%;
@@ -578,4 +618,45 @@ body {
     font-size: 1rem;
   }
 }
+
+/* ========================
+   Desktop ≥ 1025px
+   ======================== */
+@media (min-width: 1025px) {
+  .products-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr; /* sidebar + main */
+    gap: 2rem;
+  }
+
+  .sidebar {
+    display: block; /* always visible */
+    position: sticky;
+    top: calc(var(--navbar-height) + 20px);
+    height: fit-content;
+  }
+
+  .product-layout {
+    flex-direction: row; /* gallery left, info right */
+    gap: 2rem;
+  }
+
+  .product-gallery {
+    flex: 1 1 350px;
+    max-width: 500px;
+  }
+  .product-info {
+    flex: 1 1 300px;
+    text-align: left;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-info h2 {
+    font-size: 2rem;
+  }
+}
+
 
