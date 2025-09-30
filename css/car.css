@@ -93,10 +93,49 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .section.career h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .job-listing {
+    gap: 20px;
+  }
   .job-card {
-    width: 100%;
+    width: 45%; /* two per row */
+    max-width: none;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .section.career {
+    padding: 30px 15px;
+  }
+  .section.career h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  .job-card {
+    width: 100%; /* full width */
     max-width: 500px;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .section.career h2 {
+    font-size: 1.5rem;
+  }
+  .job-details h3 {
+    font-size: 1rem;
+  }
+  .job-details p {
+    font-size: 0.85rem;
   }
 }

@@ -486,132 +486,71 @@ body {
   transform: translateY(0);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 992px) {
+/* ========================
+   Responsive Breakpoints
+   ======================== */
+
+/* Tablets ≤ 1024px */
+@media (max-width: 1024px) {
   .products-layout {
     flex-direction: column;
   }
   .sidebar {
-    flex: 1 1 auto;
     position: relative;
     top: 0;
+    width: 100%;
   }
-}
-@media (max-width: 768px) {
-  .product-layout {
-    grid-template-columns: 1fr;
-  }
-  .product-gallery {
-    margin-bottom: 2rem;
-  }
-}
-/* Tablet */
-@media (max-width: 992px) {
-  .product-layout {
-    gap: 1.5rem;  /* medium gap */
-  }
-}
-
-/* Mobile (stacked already) */
-@media (max-width: 768px) {
-  .product-layout {
-    grid-template-columns: 1fr;
-    gap: 1rem;   /* smaller gap when stacked */
-  }
-}
-
-/* ================================
-   RESPONSIVE PRODUCT LAYOUTS
-================================ */
-
-/* Default (Desktop ≥ 1025px) */
-.product-layout {
-  display: flex;             /* flexbox is easier here */
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.product-gallery {
-  flex: 1 1 350px;
-  min-width: 300px;
-}
-
-.product-info {
-  flex: 1 1 300px;
-}
-
-/* Tablet (≤ 1024px) */
-@media (max-width: 1024px) {
-  .product-layout {
-    flex-direction: column;  /* stack gallery + info */
-    gap: 1.5rem;
-  }
-
   .product-info h2 {
     font-size: 1.7rem;
   }
-
   .product-info p,
   .product-info li {
     font-size: 1rem;
   }
-
-  .features-grid {
-    gap: 1.5rem;
-  }
-
   .feature-card h3 {
     font-size: 1.25rem;
   }
-  .feature-card p {
-    font-size: 0.95rem;
-  }
+  .feature-card p,
   .feature-card ul {
     font-size: 0.95rem;
   }
-
-  .products-layout {
-    grid-template-columns: 200px 1fr; /* sidebar narrower */
-  }
 }
 
-/* Mobile (≤ 768px) */
+/* Mobile ≤ 768px */
 @media (max-width: 768px) {
   .products-layout {
-    grid-template-columns: 1fr; /* sidebar below */
+    flex-direction: column;
+    gap: 1.5rem;
   }
-
   .sidebar {
     order: 2;
+    margin-top: 2rem;
   }
-
+  .product-info h2 {
+    font-size: 1.6rem;
+  }
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
-
   .footer-right img {
     margin: 0.5rem;
   }
 }
 
-/* Small Mobile (≤ 600px) */
+/* Small Mobile ≤ 600px */
 @media (max-width: 600px) {
   .product-info h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
-
   .product-info p,
   .product-info li {
     font-size: 0.9rem;
   }
-
   .features-grid {
     grid-template-columns: 1fr; /* 1 column only */
     gap: 1rem;
   }
-
   .feature-card h3 {
     font-size: 1.15rem;
   }

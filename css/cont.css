@@ -129,13 +129,14 @@
     text-align: center;
   }
 
+  /* Stack map + QR + info vertically */
   .contact-layout {
-    flex-direction: column; /* stack map and right side */
+    flex-direction: column;
     align-items: center;
   }
 
   .map-wrapper {
-    min-height: 400px;
+    min-height: 350px;
     width: 100%;
   }
 
@@ -143,35 +144,51 @@
     width: 100%;
     align-items: center;
   }
+
+  /* Contact info becomes 1 column */
+  .contact-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.2rem;
+  }
 }
 
 /* Mobile (≤ 600px) */
 @media (max-width: 600px) {
   .contact-section {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
 
+  /* QR Code */
   .qr-code img {
-    max-width: 150px;
+    max-width: 140px;
+    margin-bottom: 1rem;
   }
 
+  /* Contact Info refinements */
   .contact-info {
     font-size: 0.95rem;
   }
 
   .contact-info h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
   }
 
   .contact-info p {
     font-size: 0.9rem;
+    margin-bottom: 0.8rem;
   }
 
   .contact-info a {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
+  /* Map */
   .map-wrapper {
-    min-height: 300px;
+    min-height: 250px;
+    border-radius: 8px;
   }
 }
+
