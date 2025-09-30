@@ -141,8 +141,8 @@
   }
 }
 
-/* Mobile (≤ 750px) */
-@media (max-width: 750px) {
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
   .section.career {
     padding: 30px 15px;
   }
@@ -155,7 +155,7 @@
     max-width: 500px;
   }
   .section.career form {
-    width: 100%;
+    width: 300px;
     max-width: 100%; /* make form take full width */
   }
   .section.career form input,
