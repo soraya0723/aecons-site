@@ -485,77 +485,97 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* ========================
+   Base (Mobile First)
+   ======================== */
+.products-layout {
+  display: flex;
+  flex-direction: column; /* stack by default */
+  gap: 1.5rem;
+}
+
+.product-gallery {
+  width: 100%;
+  text-align: center;
+}
+.product-gallery img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* Product Info */
+.product-info {
+  text-align: left;
+}
+.product-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+.product-info p,
+.product-info li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.feature-card {
+  padding: 1.25rem;
+}
+.feature-card h3 {
+  font-size: 1.1rem;
+}
+.feature-card p,
+.feature-card ul {
+  font-size: 0.9rem;
+}
+
+/* Sidebar (collapsible on mobile) */
+.sidebar {
+  display: none; /* hidden by default on small screens */
+  background: #fff;
+  border: 1px solid #DF1024;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.sidebar.active {
+  display: block; /* shown when toggled */
+}
 
 /* ========================
-   Responsive Breakpoints
+   Tablets ≥ 768px
    ======================== */
-
-/* Tablets ≤ 1024px */
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .products-layout {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
   }
-  .sidebar {
-    position: relative;
-    top: 0;
-    width: 100%;
+
+  .product-gallery {
+    flex: 1 1 50%;
   }
+  .product-info {
+    flex: 1 1 50%;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
   .product-info h2 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
   .product-info p,
   .product-info li {
     font-size: 1rem;
   }
-  .feature-card h3 {
-    font-size: 1.25rem;
-  }
-  .feature-card p,
-  .feature-card ul {
-    font-size: 0.95rem;
-  }
 }
 
-/* Mobile ≤ 768px */
-@media (max-width: 768px) {
-  .products-layout {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .sidebar {
-    order: 2;
-    margin-top: 2rem;
-  }
-  .product-info h2 {
-    font-size: 1.6rem;
-  }
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer-right img {
-    margin: 0.5rem;
-  }
-}
-
-/* Small Mobile ≤ 600px */
-@media (max-width: 600px) {
-  .product-info h2 {
-    font-size: 1.4rem;
-  }
-  .product-info p,
-  .product-info li {
-    font-size: 0.9rem;
-  }
-  .features-grid {
-    grid-template-columns: 1fr; /* 1 column only */
-    gap: 1rem;
-  }
-  .feature-card h3 {
-    font-size: 1.15rem;
-  }
-  .feature-card p,
-  .feature-card ul {
-    font-size: 0.85rem;
-  }
-}
