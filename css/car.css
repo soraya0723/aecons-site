@@ -141,8 +141,8 @@
   }
 }
 
-/* Mobile (≤ 768px) */
-@media (max-width: 768px) {
+/* Mobile (≤ 750px) */
+@media (max-width: 750px) {
   .section.career {
     padding: 30px 15px;
   }
