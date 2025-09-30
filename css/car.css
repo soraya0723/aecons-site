@@ -31,6 +31,32 @@
   margin-bottom: 8px;
   text-align: left; /* optional, if you don’t want center */
 }
+/* Career Form Inputs */
+.section.career form {
+  max-width: 600px;
+  margin: 0 auto; /* center form */
+  width: 100%;
+}
+
+.section.career form input,
+.section.career form textarea,
+.section.career form select,
+.section.career form button {
+  width: 100%;
+  box-sizing: border-box; /* prevent overflow from padding */
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Textarea should grow naturally */
+.section.career form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
 
 /* Job Listing Grid */
 .job-listing {
@@ -110,6 +136,9 @@
     width: 45%; /* two per row */
     max-width: none;
   }
+  .section.career form {
+    max-width: 90%; /* shrink form a little on tablets */
+  }
 }
 
 /* Mobile (≤ 768px) */
@@ -125,6 +154,17 @@
     width: 100%; /* full width */
     max-width: 500px;
   }
+  .section.career form {
+    width: 100%;
+    max-width: 100%; /* make form take full width */
+  }
+  .section.career form input,
+  .section.career form textarea,
+  .section.career form select,
+  .section.career form button {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 /* Small Mobile (≤ 480px) */
@@ -138,4 +178,14 @@
   .job-details p {
     font-size: 0.85rem;
   }
+
+  /* Form adjustments for very small screens */
+  .section.career form input,
+  .section.career form textarea,
+  .section.career form select,
+  .section.career form button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
 }
+
