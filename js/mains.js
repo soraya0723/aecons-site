@@ -2,23 +2,27 @@
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
-  if (loader) {
-    // Keep loader for 2s before hiding
-    setTimeout(() => {
+  // Function to hide loader after video ends
+  window.hideLoader = () => {
+    loader.classList.add("hidden");
+    console.log("✅ Loader hidden after video");
+  };
+
+  // Safety fallback: hide after 19s if "ended" doesn’t fire
+  setTimeout(() => {
+    if (loader && !loader.classList.contains("hidden")) {
       loader.classList.add("hidden");
-      console.log("✅ Loader hidden with animation");
-    }, 2000);
-  }
+      console.log("⏱️ Fallback: Loader hidden after 19s");
+    }
+  }, 19000);
 
-  // Grab all sections
+  // Scroll reveal logic
   const sections = document.querySelectorAll("section, main");
-
   const revealOnScroll = () => {
     sections.forEach((sec, i) => {
       if (!sec.classList.contains("visible")) {
         const rect = sec.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
-          // Add staggered animation
           setTimeout(() => {
             sec.classList.add("visible");
             console.log("✨ Revealed section:", i);
@@ -28,7 +32,6 @@ window.addEventListener("load", () => {
     });
   };
 
-  // Run on scroll and load
   window.addEventListener("scroll", revealOnScroll, { passive: true });
   revealOnScroll();
 });

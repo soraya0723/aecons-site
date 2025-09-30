@@ -25,10 +25,13 @@
 </head>
 
 <body>
-  <!-- Loader Overlay -->
-  <div id="loader">
-    <img src="assets/icon/viber_logo.svg" alt="Loading...">
-  </div>
+  <!-- ================== LOADER ================== -->
+<div id="loader">
+  <video autoplay muted playsinline onended="hideLoader()">
+    <source src="../assets/video/AEintro.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
 
   <!-- === HERO SWIPER === -->
 <div class="swiper hero-swiper" aria-label="Featured Project Images">
