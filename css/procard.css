@@ -145,12 +145,12 @@ body {
 
   .product-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 2rem;
+    gap: 1rem;
     max-width: 1000px;
   }
 
   .product-card {
-    width: 100%;
+    width: 98%;
     height: 380px;
   }
 
@@ -175,7 +175,7 @@ body {
   .products-section h2 {
     font-size: 1.7rem;
     margin-bottom: 30px;
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 
   .product-grid {
@@ -185,7 +185,7 @@ body {
   }
 
   .product-card {
-    width: 100%;
+    width: 99%;
     height: auto; /* let card grow naturally */
   }
 

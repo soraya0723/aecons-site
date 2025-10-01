@@ -525,21 +525,23 @@ body {
   display: flex;
   flex-direction: column; /* stack by default */
   gap: 1rem;
-  align-items: center; /* center children horizontally */
-  text-align: center; /* center text by default */
+  align-items: center;   /* center content on mobile */
+  text-align: center;    /* center text globally on mobile */
 }
 
 /* Product Layout (gallery + info inside) */
 .product-layout {
   display: flex;
   flex-direction: column; /* stacked by default */
-  gap: 1rem;
-  align-items: center; /* center items horizontally */
+  gap: 1.5rem;
+  align-items: center; /* center gallery + info */
 }
 
+/* Product Gallery */
 .product-gallery {
-  width: 100%; /* allow full width on mobile */
-  max-width: 300px; /* don’t exceed 300px */
+  width: 100%;
+  max-width: 300px; /* cap width so image doesn’t stretch too much */
+  text-align: center;
 }
 .product-gallery img {
   max-width: 100%;
@@ -548,9 +550,12 @@ body {
   object-fit: contain;
 }
 
+/* Product Info */
 .product-info {
-  max-width: 600px; /* keeps text readable */
+  width: 100%;
+  max-width: 600px;   /* keeps text readable */
   text-align: center; /* center text on mobile */
+  padding: 0 1rem;    /* prevent text from hitting screen edges */
 }
 .product-info h2 {
   font-size: 1.4rem;
@@ -558,7 +563,7 @@ body {
 }
 .product-info p,
 .product-info li {
-  font-size: 0.90rem;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
@@ -567,8 +572,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  max-width: 600px; /* keep features from stretching too wide */
-  margin: 0 auto; /* center the grid */
+  max-width: 600px;
+  margin: 0 auto; /* center grid */
 }
 .feature-card {
   padding: 1.25rem;
