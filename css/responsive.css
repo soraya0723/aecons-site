@@ -146,10 +146,8 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;    /* stack elements vertically */
     justify-content: center;   /* vertical centering */
     align-items: center;       /* horizontal centering */
-    padding: 1rem 1rem;        /* spacing inside wrapper */
     text-align: center;
-    margin-right: 0.9rem;     /* space from right edge */
-    margin-left: 0.9rem;      /* space from left edge */
+  
   }
 
   /* Hide video on tablet */
@@ -169,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(255, 255, 255, 0.85);
     border-radius: 12px;
     color: #000;
-    margin-right: 1rem;
+    margin-right: 0.1rem;
     margin-left: 9rem;
   }
 
