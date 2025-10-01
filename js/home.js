@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const aboutImg = document.querySelector(".about-card img");
+  const aboutImg = document.querySelector(".about-img"); // updated selector ✅
 
   if (aboutImg) {
     // Scroll reveal animation
@@ -18,13 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hover 3D tilt effect
     aboutImg.addEventListener("mousemove", (e) => {
       const rect = aboutImg.getBoundingClientRect();
-      const x = e.clientX - rect.left; // mouse X within image
-      const y = e.clientY - rect.top;  // mouse Y within image
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      // Calculate tilt (max 10deg)
       const rotateX = ((y - centerY) / centerY) * 10;
       const rotateY = ((x - centerX) / centerX) * -10;
 

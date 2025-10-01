@@ -157,16 +157,17 @@
 
 
 /* ===== ABOUT PREVIEW SECTION ===== */
-.about-card {
+.about-preview {
   display: flex;
-  flex-direction: row; /* always side-by-side */
+  flex-direction: row;   /* side-by-side on desktop */
   align-items: center;
   justify-content: center;
   gap: 30px;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap;     /* desktop: no stacking */
+  padding: 50px 5%;
 }
 
-.about-card img {
+.about-img {
   flex: 1 1 50%;
   width: 50%;
   height: auto;
@@ -180,12 +181,12 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.about-card img.visible {
+.about-img.visible {
   opacity: 1;
   transform: perspective(1000px) translateY(0) rotateX(0deg);
 }
 
-.about-card img.hover-3d {
+.about-img.hover-3d {
   transition: transform 0.1s ease-out;
 }
 
@@ -208,5 +209,4 @@
   color: #252522;
   margin-bottom: 20px;
 }
-
 
