@@ -268,48 +268,76 @@ body {
 }
 
 /* ========================
+   📊 Datasheet
+   ======================== */
+.datasheet {
+  padding: 2rem 1rem; /* smaller padding on mobile */
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-width: 500px; /* prevent ugly collapsing on small screens */
+}
+
+/* Head */
+.styled-table thead {
+  background: var(--brand-red);
+  color: #fff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* Cells */
+.styled-table th,
+.styled-table td {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap; /* keep each cell neat */
+}
+
+/* Hover effect (desktop only) */
+@media (hover: hover) {
+  .styled-table tr:hover {
+    background: #fafafa;
+  }
+}
+
+/* ========================
    🔄 Responsive
    ======================== */
-/* Base (mobile) */
-.product-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;   /* center on mobile */
-  text-align: center;
-}
 
-/* Tablets (≥768px) */
-@media (min-width: 768px) {
-  .product-layout {
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: left;
+/* Mobile ≤600px */
+@media (max-width: 600px) {
+  .styled-table {
+    font-size: 0.8rem;
   }
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .styled-table th,
+  .styled-table td {
+    padding: 0.5rem;
   }
 }
 
-/* Product Gallery Card on Desktop */
-@media (min-width: 1025px) {
-  .product-gallery {
-    flex: 0 0 500px;
-    max-width: 500px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    padding: 1rem;
-    margin: 0; /* remove floating */
+/* Tablets (601px–992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  .styled-table {
+    font-size: 0.85rem;
   }
-
-  .swiper-main {
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .swiper-thumbs {
-    margin-top: 1rem;
+  .styled-table th,
+  .styled-table td {
+    padding: 0.6rem;
   }
 }
+
 
