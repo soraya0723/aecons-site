@@ -1,49 +1,6 @@
-@media (max-width:600px) {
-  form {
-    padding:1rem; margin:1rem; width:100%;
-  }
-  .application-form label {
-    font-size:.95rem;
-  }
-  form input,
-  form textarea,
-  form select {
-    font-size:1rem; padding:.65rem;
-  }
-  .btn {
-    width:100%; padding:.8rem; margin-top:1rem;
-  }
-  .job-listing {
-    grid-template-columns:1fr;
-    padding:0 1rem;
-  }
-  .job-card {
-    flex-direction:column; text-align:center; gap:.75rem;
-  }
-  .job-icon img {
-    width:40px; height:40px; margin:auto;
-  }
-}
-/* 📱 Responsive */
-@media (max-width: 600px) {
-  .products-section h2 {
-    font-size: 2rem;
-  }
-
-  .card-body h3 {
-    font-size: 1rem;
-  }
-
-  .card-body .btn {
-    padding: 8px 16px;
-    font-size: 0.95rem;
-  }
-}
-
-/* ==============================
+/* ===============================
    GLOBAL RESPONSIVE BASE
-   (Safe defaults for all pages)
-============================== */
+   =============================== */
 
 /* Make images and embeds scale */
 img, video, iframe {
@@ -58,10 +15,10 @@ html, body {
   width: 100%;
 }
 
-/* Global container handling */
+/* Global container */
 .container {
   width: 100%;
-  padding: 0 1rem; /* safe padding */
+  padding: 0 1rem;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -71,43 +28,132 @@ h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
 }
 
-/* ========== Responsive Breakpoints ========== */
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
 
-/* Phones (≤480px) */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px; /* scale down slightly */
-  }
-
-  .section-title {
-    font-size: 1.8rem;
+/* ===== Tablet (≤1024px) ===== */
+@media (max-width: 1024px) {
+  /* About */
+  .about-row {
+    grid-template-columns: 1fr; /* stack vertically */
     text-align: center;
+    gap: 2rem;
+  }
+  .about-img { order: 1; }
+  .about-text { order: 2; }
+  .about-text h3 { font-size: 1.5rem; }
+  .about-text p { font-size: 0.95rem; }
+  .about-img img { width: 100%; max-height: 400px; }
+
+  /* Services & Products */
+  .service-grid,
+  .product-grid {
+    grid-template-columns: 1fr; /* single column */
+    text-align: center;
+    gap: 2rem;
   }
 
-  .row, .grid, .flex {
-    display: block !important; /* stack safely */
+  /* Video wrapper */
+  .video-wrapper {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .video-wrapper video {
+    width: 80%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .text-content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .footer-right img { max-height: 35px; }
+}
+
+/* ===== Mobile (≤600px) ===== */
+@media (max-width: 600px) {
+  .about-card {
+    display: flex;
+    flex-direction: column-reverse;  /* flip order */
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .about-card img {
+    width: 100%;
+    max-height: 250px;
+    border-radius: 3px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .about-content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .about-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content .btn {
+    margin: 0.5rem auto;
+    display: inline-block;
   }
 }
 
-/* Tablets (≥768px) */
-@media (min-width: 768px) {
-  body {
-    font-size: 16px;
+
+
+
+
+  /* Services & Products */
+  .service-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .service-card img,
+  .product-card img {
+    margin: 0 auto;
   }
 
-  .container {
-    padding: 0 2rem;
+  /* Video wrapper */
+  .video-wrapper {
+    gap: 1.5rem;
   }
-}
+  .video-wrapper video {
+    width: 90%;
+    max-width: 320px;
+  }
+  .text-content h3 {
+    font-size: 1.3rem;
+  }
+  .text-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 
-/* Desktops (≥1024px) */
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1200px;
+  /* Footer */
+  .footer-container {
+    gap: 1rem;
   }
+  .footer-right img { max-height: 30px; }
 
-  .section-title {
-    font-size: 2.5rem;
-  }
-}
 
