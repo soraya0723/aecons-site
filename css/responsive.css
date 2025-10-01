@@ -126,17 +126,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
   /* Services & Products */
   .service-grid,
   .product-grid {
@@ -148,24 +137,69 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
   }
 
-  /* Video wrapper */
+  /* ===== Responsive ===== */
+@media (max-width: 1024px) { /* Tablet */
   .video-wrapper {
-    gap: 1.5rem;
-  }
-  .video-wrapper video {
-    width: 90%;
-    max-width: 320px;
-  }
-  .text-content h3 {
-    font-size: 1.3rem;
-  }
-  .text-content p {
-    font-size: 0.9rem;
-    line-height: 1.4;
+    position: relative;
+    height: auto;              /* let container grow with text */
+    display: flex;
+    flex-direction: column;    /* stack elements vertically */
+    justify-content: center;   /* vertical centering */
+    align-items: center;       /* horizontal centering */
+    padding: 2rem 1rem;        /* spacing inside wrapper */
+    text-align: center;
+    margin-right: 0.9rem;     /* space from right edge */
+    margin-left: 0.9rem;      /* space from left edge */
   }
 
-  /* Footer */
-  .footer-container {
-    gap: 1rem;
+  /* Hide video on tablet */
+  .video-wrapper video {
+    display: none;
   }
-  .footer-right img { max-height: 30px; }
+
+  /* Centered text */
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertical centering inside text container */
+    align-items: center;       /* horizontal centering */
+    width: 100%;
+    max-width: 90%;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    color: #000;
+    margin-right: 0.9rem;
+    margin-left: 9rem;
+  }
+
+  .text-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) { 
+  .text-content h3 { font-size: 1.4rem; }
+  .text-content p  { font-size: 0.95rem; }
+}
+
+@media (max-width: 600px) {
+  .text-content {
+    width: 100%;
+    padding: 1rem;
+  }
+  .text-content h3 { font-size: 1.3rem; }
+  .text-content p  { font-size: 0.9rem; line-height: 1.4; }
+}
+
+
+
+
+
+
