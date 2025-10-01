@@ -125,3 +125,45 @@ body {
     display: flex !important; /* ensure visible */
   }
 }
+/* ==== Hamburger ==== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
+
+  position: absolute;     /* lock position */
+  left: 20px;             /* distance from left edge */
+  top: 50%;               /* middle of navbar */
+  transform: translateY(-50%); /* perfect vertical centering */
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #302B31; /* charcoal tone */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger → X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Show on mobile only */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+

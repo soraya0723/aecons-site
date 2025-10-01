@@ -20,32 +20,40 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <div class="logo">
-        <a href="index.html">
-          <img src="assets/icon/viber_image_2025-08-15_14-50-31-958.png" alt="Aecons Logo" class="logo-img" />
-        </a>
-      </div>
-
-      <ul class="nav-links" id="nav-menu">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="projects.html">Projects</a></li>
-  <li><a href="services.html">Services</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="career.html">Career</a></li>
-  <li><a href="products.html">Products</a></li>
-  
-</ul>
+<nav class="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/icon/viber_image_2025-08-15_14-50-31-958.png" alt="Aecons Logo" class="logo-img" />
+      </a>
     </div>
-  </nav>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="products.html">Products</a></li>
+    </ul>
+  </div>
+</nav>
   
   <!-- MAIN PRODUCT PAGE -->
 <main class="products-layout">
   <!-- Sidebar Toggle Button (mobile/tablet only) -->
   <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active')">
-    ☰ Categories
+    ☰
   </button>
   <!-- Sidebar -->
   <aside class="sidebar">
@@ -266,5 +274,20 @@
   <script src="js/main.js" defer></script>
   <script src="js/sl.js" defer></script>
   <script src="js/nav.js" defer></script>
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
+
+  // Optional: add scroll effect
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 20);
+  });
+</script>
 </body>
 </html>
