@@ -19,8 +19,8 @@
 .hero-swiper {
   width: 100%;
   background: transparent;
-  margin-top: 80px; /* adjust based on navbar height */
-  
+  margin-top: 80px; /* keep navbar spacing */
+ 
 }
 
 .swiper-slide {
@@ -28,12 +28,15 @@
   align-items: center;
   justify-content: center;
   background: transparent;
+  padding: 1% 15%; /* top-bottom 5%, left-right 20% */
+  box-sizing: border-box; /* ensure padding counts inside width */
 }
+
 
 .swiper-slide img {
   width: 100%;
-  height: auto;        /* keep original ratio */
-  object-fit: contain; /* show full image */
+  height: auto;
+  object-fit: contain;
   background: transparent;
 }
 
@@ -46,7 +49,7 @@
 .slide-text {
   position: absolute;
   bottom: 20%;
-  left: 10%;
+  left: 70%;
   font-size: 2rem;
   color: white;
   font-weight: 600;
