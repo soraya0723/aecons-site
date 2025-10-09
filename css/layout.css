@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  padding: 1% 15%; /* top-bottom 5%, left-right 20% */
+  padding: 2% 15%; /* top-bottom 5%, left-right 20% */
   box-sizing: border-box; /* ensure padding counts inside width */
 }
 
@@ -48,19 +48,48 @@
 /* Text overlay */
 .slide-text {
   position: absolute;
-  bottom: 20%;
-  left: 70%;
+  bottom: 10%;          /* slightly lower for better balance */
+  left: 69%;             /* move to left so text fits better */
+  max-width: 45%;       /* prevent long lines */
   font-size: 2rem;
-  color: white;
-  font-weight: 600;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
 }
 
 .slide-text small {
   display: block;
-  font-size: 0.9rem;
-  font-weight: normal;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+  color: #f0f0f0;
 }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .slide-text {
+    font-size: 1.6rem;
+    max-width: 60%;
+    bottom: 12%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-text {
+    font-size: 1.3rem;
+    max-width: 80%;
+    bottom: 15%;
+    left: 10%;
+    padding: 0.5rem 0.8rem;
+  }
+  .slide-text small {
+    font-size: 0.85rem;
+  }
+}
+
 
 
 
