@@ -164,71 +164,84 @@
 
 
 
-/* ===== Responsive ===== */
+/* =======================
+   RESPONSIVE DESIGN
+======================= */
 
-/* Tablet (≤ 1024px) */
+/* --- Tablets (≤ 1024px) --- */
 @media (max-width: 1024px) {
-  .filter-btn {
-    font-size: 0.95rem;
-    padding: 0.55rem 1.2rem;
+  .section-title {
+    font-size: 2.2rem;
   }
 
-  .gallery-one {
+  .gallery-one,
+  .gallery-two {
     grid-template-columns: 1fr 1fr;
-  }
-  .gallery-three {
-    grid-template-columns: 1fr;
-  }
-  .gallery-four {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 250px);
   }
 
   .overlay h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
+
   .overlay p {
     font-size: 0.85rem;
   }
 
   .gallery-wrapper h4 {
     font-size: 1.8rem;
-    margin: 1.5rem 0 1rem;
   }
 }
 
-/* Mobile (≤ 768px) */
+/* --- Mobile (≤ 768px) --- */
 @media (max-width: 768px) {
+  .section.projects {
+    padding: 3rem 1rem;
+  }
+
+  .filter-buttons {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
   .gallery-one,
-  .gallery-two,
-  .gallery-three,
-  .gallery-four {
-    grid-template-columns: 1fr;   /* single column */
+  .gallery-two {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
-  .gallery-one .big,
-  .gallery-two .big,
-  .gallery-four .big {
-    grid-column: span 1;
-  }
-
-  .gallery-two .small {
-    height: auto;                 
-  }
-
-  .gallery-wrapper h4 {
-    font-size: 1.5rem;
-    margin: 1rem 0 0.75rem;
+  .gallery-item {
+    height: 250px;
   }
 
   .overlay h3 {
     font-size: 0.95rem;
   }
+
   .overlay p {
     font-size: 0.8rem;
   }
 
-  .gallery-wrapper {
-    margin-bottom: 2rem;
-    padding: 0 1rem;
+  .gallery-wrapper h4 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+  }
+}
+
+/* --- Extra Small (≤ 480px) --- */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  .overlay {
+    padding: 1rem 1.2rem;
   }
 }
