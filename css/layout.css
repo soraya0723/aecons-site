@@ -68,15 +68,23 @@
   color: #f0f0f0;
 }
 
-/* Responsive adjustments */
+/* === RESPONSIVE BREAKPOINTS === */
+
+/* Laptop */
 @media (max-width: 1024px) {
   .slide-text {
     font-size: 1.6rem;
     max-width: 60%;
     bottom: 12%;
   }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
   .slide-text {
     font-size: 1.3rem;
@@ -85,11 +93,48 @@
     left: 10%;
     padding: 0.5rem 0.8rem;
   }
+
   .slide-text small {
     font-size: 0.85rem;
   }
+
+  .swiper-slide {
+    padding: 2% 8%; /* less side padding on smaller screens */
+  }
+
+  .swiper-slide img {
+    object-fit: cover; /* fill slide area better */
+    max-height: 400px;
+  }
 }
 
+/* Mobile */
+@media (max-width: 600px) {
+  .slide-text {
+    font-size: 4vw;
+    max-width: 85%;
+    bottom: 12%;
+    left: 65%;
+    padding: 0.4rem 0.6rem;
+    line-height: 1.2;
+  }
+
+  .slide-text small {
+    font-size: 3vw;
+  }
+
+  .swiper-slide {
+    padding: 0 5%;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    max-height: 250px;   /* prevent image from being too tall */
+    height: auto;
+    object-fit: cover;   /* fills the container nicely */
+    border-radius: 1px;
+  }
+}
 
 
 
