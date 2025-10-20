@@ -192,10 +192,42 @@
 
 /* --- Mobile (≤ 768px) --- */
 @media (max-width: 768px) {
-  .section.projects {
-    padding: 3rem 1rem;
+  /* Overlay container */
+  .gallery-item {
+    height: auto;       /* allow it to grow based on content */
+    overflow: visible;  /* ensure overlay text isn't cut off */
   }
 
+  /* Overlay itself */
+  .overlay {
+    position: relative;         /* remove absolute positioning */
+    inset: unset;               /* clear any previous insets */
+    background: rgba(0, 0, 0, 0.6); /* keep dark readable background */
+    padding: 1rem 1.2rem;       /* space around text */
+    overflow: visible;          /* text shows fully */
+  }
+/* Overlay text */
+.overlay h3,
+.overlay p {
+  font-size: 0.6rem;          /* readable on mobile */
+  line-height: 1.3;           /* normal line spacing */
+  max-width: 100%;            /* use full width */
+  margin: 0;                  /* remove gaps */
+  color: #fff;
+}
+
+/* Limit paragraph to 1 line with ellipsis */
+.overlay p {
+  display: -webkit-box;        /* enable flex-like box for clamp */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;       /* number of lines to show */
+  overflow: hidden;            /* hide the rest */
+  text-overflow: ellipsis;     /* add ... at the end */
+  white-space: normal;         /* allow wrapping inside the box */
+}
+
+
+  /* Filter buttons */
   .filter-buttons {
     gap: 0.5rem;
     margin-bottom: 2rem;
@@ -211,47 +243,24 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
-
   .gallery-one .big,
   .gallery-two .big {
     grid-row: auto;
     grid-column: auto;
   }
 
-  .gallery-item {
-    height: auto;
-    min-height: 250px;
-  }
-
   .gallery-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
   }
 
-  .overlay h3 {
-    font-size: 0.9rem;
-  }
-  .overlay p {
-    font-size: 0.6rem;
-  }
-
+  /* Gallery section title */
   .gallery-wrapper h4 {
     font-size: 1.5rem;
     margin: 2rem 0 1rem;
   }
 }
 
-/* --- Extra Small (≤ 480px) --- */
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.8rem;
-  }
-  .section-subtitle {
-    font-size: 0.9rem;
-  }
-  .overlay {
-    padding: 1rem 1.2rem;
-  }
-}
+
