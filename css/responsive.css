@@ -82,47 +82,40 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Mobile (≤600px) ===== */
 @media (max-width: 600px) {
-  /* About section stacked vertically */
-    .about-preview {
-    display: flex;
+  .about-preview-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1rem;
     padding: 1.5rem 1rem;
-   
   }
 
-  /* Force hide image and its container */
-  .about-img,
-  .about-img img {
+  .about-preview-section .about-img,
+  .about-preview-section .about-img img {
     display: none !important;
   }
 
-  /* Text/content styling */
-  .about-content {
+  .about-preview-section .about-content {
     width: 100%;
     padding: 0 1rem;
   }
 
-  .about-content h3 {
+  .about-preview-section .about-content h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
   }
 
-  .about-content p {
+  .about-preview-section .about-content p {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
 
-  /* Button centering */
-  .about-content .btn {
+  .about-preview-section .about-content .btn {
     display: inline-block;
     margin: 0.5rem auto;
   }
 }
-
 
   /* Services & Products */
   .service-grid,
